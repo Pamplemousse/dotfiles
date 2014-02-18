@@ -16,15 +16,10 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 export PATH=".bin:$PATH"
-#export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/lib/node:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
-
-#eval "$(rbenv init - --no-rehash)"
 
 
 # Add RVM to PATH for scripting
@@ -68,10 +63,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # Show titles for completion types and group by type
 zstyle ':completion:*:descriptions' format "$fg_bold[black]» %d$reset_color"
 zstyle ':completion:*' group-name ''
-
-# Ignore some common useless files
-zstyle ':completion:*' ignored-patterns '*?.pyc' '__pycache__'
-zstyle ':completion:*:*:rm:*:*' ignored-patterns
 
 bindkey '^i' complete-word # tab to do menu
 bindkey "\e[Z" reverse-menu-complete # shift-tab to reverse menu
