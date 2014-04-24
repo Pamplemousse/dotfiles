@@ -72,3 +72,4 @@ unset -f work_in_progress
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.zsh"
+homeshick --quiet refresh
