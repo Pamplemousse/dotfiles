@@ -1,1 +1,15 @@
-/home/xavier/.homesick/repos/dotfiles/home/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+{
+	"dictionary": "Packages/Dictionaries/French.dic",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"spell_check": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}
