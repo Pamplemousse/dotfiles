@@ -15,4 +15,4 @@ My personnal dotfiles.
 ### Help and documentation
 
   - installation : https://github.com/andsens/homeshick/wiki/Installation
-  - tutoriels    : https://github.com/andsens/homeshick/wiki/Tutorials
+  - tutorials    : https://github.com/andsens/homeshick/wiki/Tutorials
