@@ -12,6 +12,22 @@ My personnal dotfiles.
     
     homeshick clone Pamplemousse/dotfiles
 
+
+### Add a file
+
+    homeshick track dotfiles /path_to/file_to_be_tracked
+    homeshick cd dotfiles
+    git commit -a -m "awesome commit message"
+    git push origin master
+    
+    
+### Updating a computer's config
+
+    homeshick cd dotfiles
+    git pull origin master
+    homeshick link
+
+
 ### Help and documentation
 
   - installation : https://github.com/andsens/homeshick/wiki/Installation
