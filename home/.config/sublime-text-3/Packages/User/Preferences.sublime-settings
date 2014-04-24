@@ -1,12 +1,17 @@
 {
+	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
 	"dictionary": "Packages/Dictionaries/French.dic",
 	"ensure_newline_at_eof_on_save": true,
-	"font_size": 12,
+	"font_size": 11,
+	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"soda_classic_tabs": true,
 	"spell_check": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
