@@ -14,9 +14,9 @@
     default = current
 
 [core]
-    editor = vim
-excludesfile = ~/.gitignore_global
-whitespace = space-before-tab,cr-at-eol
+    editor = subl
+    excludesfile = ~/.gitignore_global
+    whitespace = space-before-tab,cr-at-eol
 
 [alias]
     st = status -sb
