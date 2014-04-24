@@ -1,0 +1,16 @@
+{
+	"installed_packages":
+	[
+		"Alignment",
+		"Better CoffeeScript",
+		"Dictionaries",
+		"Emmet",
+		"GitGutter",
+		"LoremIpsum",
+		"Markdown Preview",
+		"Ruby Slim",
+		"RubyTest",
+		"SideBarEnhancements",
+		"SublimeREPL"
+	]
+}
