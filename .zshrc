@@ -1,4 +1,4 @@
-export EMAIL="xav.maso@y-nov.com"
+export EMAIL="xavier.maso@net-c.com"
 export FULLNAME="Xavier Maso"
 
 ZSH=$HOME/.oh-my-zsh
