@@ -2,11 +2,21 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"AdvancedNewFile",
 		"Alignment",
+		"Better CoffeeScript",
 		"Dictionaries",
+		"Emmet",
+		"GitGutter",
 		"LaTeXTools",
 		"Markdown Preview",
+		"Package Control",
+		"Ruby Slim",
+		"Sass",
 		"SideBarEnhancements",
-		"SublimeREPL"
+		"SublimeGit",
+		"SublimeREPL",
+		"Theme - Soda",
+		"Zen Tabs"
 	]
 }
