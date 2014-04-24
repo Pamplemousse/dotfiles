@@ -69,5 +69,6 @@ bindkey "\e[Z" reverse-menu-complete # shift-tab to reverse menu
 
 unset -f work_in_progress
 
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.sh"
 homeshick --quiet refresh
