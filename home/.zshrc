@@ -79,3 +79,5 @@ unset -f work_in_progress
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.sh"
 homeshick --quiet refresh
+
+[ -s "/home/pamplemousse/.nvm/nvm.sh" ] && . "/home/pamplemousse/.nvm/nvm.sh" # This loads nvm
