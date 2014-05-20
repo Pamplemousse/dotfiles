@@ -4,7 +4,7 @@ alias edit="subl -w"
 alias lla="ls -alh"
 alias duh="du -h . | grep '\./[^/]*$'"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
-alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | pbcopy"
+alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
 alias dnsflush="sudo killall -HUP mDNSResponder"
 alias serve="python -m SimpleHTTPServer"
 alias chromiumkill="ps ux | grep 'Chromium' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
@@ -40,14 +40,6 @@ alias gitc="edit $DOTFILES/.gitconfig"
 # RAILS
 
 alias be="bundle exec"
-alias fs="be foreman start"
-alias fsd="be foreman start -f Procfile.development"
-alias fr="be foreman run"
-alias frc="be foreman run rails console"
-alias frg="be foreman run guard"
-alias frr="be foreman run ruby"
-alias sss="RAILS_ENV=test rake sunspot:solr:start"
-alias rdbd="rake db:drop"
 alias rdbc="rake db:create"
 alias rdbm="rake db:migrate"
 alias rdbtp="rake db:test:prepare"
@@ -101,40 +93,6 @@ function rails_init () {
   workon
 }
 
-function dbyml_init () {
-  if [ -z "$1" ]; then
-    not_ok 'dbyml_init: missing output database.yml file'
-    return -1
-  fi
-
-  if [ -z "$2" ]; then
-    user="{username}"
-  else
-    user=$2
-  fi
-
-  echo "development:
-  adapter: postgresql
-  encoding: unicode
-  database: `basename $PWD`_development
-  username: $user
-
-test:
-  adapter: postgresql
-  encoding: unicode
-  database: `basename $PWD`_test
-  username: $user
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: `basename $PWD`_production
-  username: $user
-" > $1
-}
-
-
-# RUBY
 
 alias t="ruby -Itest"
 
