@@ -36,6 +36,13 @@ search () {
   done
 }
 
+# Completion on ssh config's hosts
+h=()
+if [[ -r ~/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+
+
 # Force a reload of completion system if nothing matched; this fixes installing
 # a program and then trying to tab-complete its name
 _force_rehash() {
