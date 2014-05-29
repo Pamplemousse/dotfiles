@@ -86,4 +86,6 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.sh"
 homeshick --quiet refresh
 
-[ -s "/home/pamplemousse/.nvm/nvm.sh" ] && . "/home/pamplemousse/.nvm/nvm.sh" # This loads nvm
+# Load nmv and enable nodejs 0.11
+[ -s "/home/pamplemousse/.nvm/nvm.sh" ] && . "/home/pamplemousse/.nvm/nvm.sh"
+nvm use 0.11
