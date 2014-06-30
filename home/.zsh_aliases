@@ -5,15 +5,11 @@ alias lla="ls -alh"
 alias duh="du -h . | grep '\./[^/]*$'"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
-alias dnsflush="sudo killall -HUP mDNSResponder"
-alias serve="python -m SimpleHTTPServer"
-alias chromiumkill="ps ux | grep 'Chromium' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 alias sshc="edit ~/.ssh/config"
 alias gemc="edit ~/.gemrc"
 
 
 # CURL
-
 alias get="curl -O"
 
 alias workon="echo \`pwd\` > $HOME/.WORK_ON"
@@ -96,10 +92,6 @@ function rails_init () {
 
 alias t="ruby -Itest"
 
-function rbenv_init () {
-  echo `basename $PWD` > .rbenv-gemsets &&
-  echo `rbenv version | awk '{print $1;}'` > .ruby-version
-}
 
 # GIT
 
@@ -107,6 +99,7 @@ alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(gree
 alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
+alias gcam="gc -a -m"
 
 # Fix oh-my-zsh's git plugin conflict
 if type gclean > /dev/null; then
@@ -206,16 +199,6 @@ function not_ok() {
 }
 
 function update () {
-  # Upgrade dotfiles
-  echo -n "\nDotfiles..." &&
-  $DOTFILES && ggpull --quiet > /dev/null && cd - > /dev/null &&
-  ok || not_ok
-
-  # Upgrade homebrew
-  echo -n "Homebrew..." &&
-  brew update > /dev/null &&
-  ok || not_ok
-
   # Upgrade heroku toolbelt
   echo -n "Heroku....." &&
   heroku update > /dev/null &&
