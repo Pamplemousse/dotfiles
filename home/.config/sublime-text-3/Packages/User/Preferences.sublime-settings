@@ -1,7 +1,7 @@
 {
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
-	"dictionary": "Packages/Dictionaries/French.dic",
+	"dictionary": "Packages/Language - French - Français/fr_FR (all variants).dic",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
@@ -37,6 +37,10 @@
 	"ignored_packages":
 	[
 		"Vintage"
+	],
+	"ignored_words":
+	[
+		"rapidement"
 	],
 	"show_encoding": true,
 	"show_line_endings": true,
