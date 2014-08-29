@@ -1,5 +1,4 @@
 # GENERAL
-
 alias edit="subl -w"
 alias lla="ls -alh"
 alias duh="du -h . | grep '\./[^/]*$'"
@@ -11,12 +10,10 @@ alias gemc="edit ~/.gemrc"
 
 # CURL
 alias get="curl -O"
-
 alias workon="echo \`pwd\` > $HOME/.WORK_ON"
 alias workoff="rm $HOME/.WORK_ON"
 
 # ZSH
-
 alias thin="nocorrect thin"
 alias thor="nocorrect thor"
 alias npm="nocorrect npm"
@@ -29,12 +26,10 @@ alias reload="echo \`pwd\` > $HOME/.RELOAD && source ~/.zshrc"
 
 alias zshc="edit $DOTFILES/.zshrc"
 alias zsha="edit $DOTFILES/.zsh_aliases"
-
 alias gitc="edit $DOTFILES/.gitconfig"
 
 
 # RAILS
-
 alias be="bundle exec"
 alias rdbc="rake db:create"
 alias rdbm="rake db:migrate"
@@ -94,7 +89,6 @@ alias t="ruby -Itest"
 
 
 # GIT
-
 alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(green)[%cn]' --decorate --date=short --graph"
 alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
@@ -207,4 +201,8 @@ function update () {
   # Annnd reload!
   echo "Reload.....\n" &&
   reload
+}
+
+function save () {
+  cp "$1" "$1.bak"
 }
