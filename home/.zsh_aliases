@@ -8,6 +8,7 @@ alias sshc="edit ~/.ssh/config"
 alias gemc="edit ~/.gemrc"
 
 
+
 # CURL
 alias get="curl -O"
 alias workon="echo \`pwd\` > $HOME/.WORK_ON"
@@ -27,6 +28,7 @@ alias reload="echo \`pwd\` > $HOME/.RELOAD && source ~/.zshrc"
 alias zshc="edit $DOTFILES/.zshrc"
 alias zsha="edit $DOTFILES/.zsh_aliases"
 alias gitc="edit $DOTFILES/.gitconfig"
+
 
 
 # RAILS
@@ -85,8 +87,6 @@ function rails_init () {
 }
 
 
-alias t="ruby -Itest"
-
 
 # GIT
 alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(green)[%cn]' --decorate --date=short --graph"
@@ -114,6 +114,8 @@ function gi() {
     curl --silent http://www.gitignore.io/api/$1
   fi
 }
+
+
 
 # HEROKU
 
@@ -149,6 +151,18 @@ function deploy () {
   fi
 }
 
+function update () {
+  # Upgrade heroku toolbelt
+  echo -n "Heroku....." &&
+  heroku update > /dev/null &&
+  ok || not_ok
+
+  # Annnd reload!
+  echo "Reload.....\n" &&
+  reload
+}
+
+
 
 # STUFF
 
@@ -157,6 +171,26 @@ alias redis="redis-cli"
 alias dbrestore="pg_restore --verbose --clean --no-acl --no-owner -d"
 
 alias optimg="open -a ImageOptim.app"
+
+# Custom search
+search () {
+  for i in "$@"; do
+    ( find -iname "*$i*" | grep -i "$i" --color=auto ) 2> /dev/null;
+  done
+}
+
+# Completion on ssh config's hosts
+h=()
+if [[ -r ~/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+# if [[ -r ~/.ssh/known_hosts ]]; then
+#   h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
+# fi
+if [[ $#h -gt 0 ]]; then
+  zstyle ':completion:*:ssh:*' hosts $h
+  zstyle ':completion:*:slogin:*' hosts $h
+fi
 
 function dbdump () {
   if [ -z "$1" ]; then
@@ -192,17 +226,6 @@ function not_ok() {
   fi
 }
 
-function update () {
-  # Upgrade heroku toolbelt
-  echo -n "Heroku....." &&
-  heroku update > /dev/null &&
-  ok || not_ok
-
-  # Annnd reload!
-  echo "Reload.....\n" &&
-  reload
-}
-
 function save () {
-  cp "$1" "$1.bak"
+  sed -i.bak '' "$@"
 }
