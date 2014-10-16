@@ -7,7 +7,7 @@ alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
 alias sshc="edit ~/.ssh/config"
 alias gemc="edit ~/.gemrc"
 
-
+alias ffox_on_pi="ssh -Y pi /usr/bin/iceweasel"
 
 # CURL
 alias get="curl -O"
