@@ -6,7 +6,7 @@ ZSH_THEME="candy"
 EDITOR="subl -w"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git python rails ruby grunt)
+plugins=(git python rails ruby grunt docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,3 +69,6 @@ homeshick --quiet refresh
 # Load nmv and enable nodejs 0.11
 source ~/.nvm/nvm.sh
 nvm use 0.11
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
