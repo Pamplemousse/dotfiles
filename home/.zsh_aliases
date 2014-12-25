@@ -162,12 +162,6 @@ function update () {
 
 # STUFF
 
-alias redisd="redis-server /usr/local/etc/redis.conf"
-alias redis="redis-cli"
-alias dbrestore="pg_restore --verbose --clean --no-acl --no-owner -d"
-
-alias optimg="open -a ImageOptim.app"
-
 # Custom search
 search () {
   for i in "$@"; do
@@ -187,24 +181,6 @@ if [[ $#h -gt 0 ]]; then
   zstyle ':completion:*:ssh:*' hosts $h
   zstyle ':completion:*:slogin:*' hosts $h
 fi
-
-function dbdump () {
-  if [ -z "$1" ]; then
-    not_ok 'dumpdb: missing required argument database name'
-  else
-    if [ -z "$2" ]; then
-      not_ok 'dumpdb: missing required argument dump file'
-    else
-      pg_dump -Fc $1 > $2_`date +%Y-%m-%d`.dump
-    fi
-  fi
-}
-
-function repeat() {
-    while [ $(( $1 -= 1 )) -ge 0 ]; do
-        "$@"
-    done
-}
 
 function ok() {
   if [ -z "$1" ]; then
