@@ -1,6 +1,6 @@
 [user]
   name = Pamplemousse
-  email = xav.maso@gmail.com
+  email = xavier.maso@net-c.com
 
 [color]
     diff = auto
@@ -21,8 +21,8 @@
 [alias]
     st = status -sb
     co = checkout
-    pul = pull
-    psh = push
+    pl = pull
+    p = push
     undo = reset --soft HEAD^
     who = shortlog -sn
     gol = log --pretty=format:\"%h %an %ad %s\" --abbrev-commit --date=short
