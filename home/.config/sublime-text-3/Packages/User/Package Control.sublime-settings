@@ -4,7 +4,9 @@
 	[
 		"AdvancedNewFile",
 		"Alignment",
+		"All Autocomplete",
 		"Alternative Autocompletion",
+		"ApplySyntax",
 		"Better CoffeeScript",
 		"DevDocs",
 		"Dictionaries",
@@ -22,6 +24,7 @@
 		"RubyTest",
 		"Sass",
 		"SideBarEnhancements",
+		"SublimeCodeIntel",
 		"SublimeGit",
 		"SublimeREPL",
 		"Zeal",
