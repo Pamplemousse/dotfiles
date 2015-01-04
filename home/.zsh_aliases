@@ -39,6 +39,13 @@ alias rdbs="rake db:seed"
 alias dbreset="rdbd && rdbc && rdbm && rdbtp"
 
 
+# CONTAINERS
+function db_create () {
+   sudo docker run -p 5432:5432 --name db_postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+}
+alias db_start="sudo docker start db_postgres"
+alias db_stop="sudo docker stop db_postgres"
+
 
 # GIT
 alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(green)[%cn]' --decorate --date=short --graph"
