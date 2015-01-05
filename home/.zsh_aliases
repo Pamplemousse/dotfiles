@@ -40,6 +40,9 @@ alias dbreset="rdbd && rdbc && rdbm && rdbtp"
 
 
 # CONTAINERS
+alias docker="sudo docker"
+alias dps="docker ps -a"
+alias drm="docker rm"
 function db_create () {
    sudo docker run -p 5432:5432 --name db_postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 }
