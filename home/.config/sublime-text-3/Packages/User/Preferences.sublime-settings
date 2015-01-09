@@ -47,7 +47,7 @@
 	"show_line_endings": true,
 	"soda_classic_tabs": true,
 	"spell_check": true,
-	// "tab_size": 2,
+	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,

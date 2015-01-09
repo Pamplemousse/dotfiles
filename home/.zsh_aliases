@@ -24,9 +24,9 @@ alias rspec="nocorrect rspec"
 alias guard="guard --no-bundler-warning"
 alias reload="echo \`pwd\` > $HOME/.RELOAD && source ~/.zshrc"
 
-alias zshc="edit $DOTFILES/.zshrc"
-alias zsha="edit $DOTFILES/.zsh_aliases"
-alias gitc="edit $DOTFILES/.gitconfig"
+alias zshc="edit $HOME/.zshrc"
+alias zsha="edit $HOME/.zsh_aliases"
+alias gitc="edit $HOME/.gitconfig"
 
 
 
@@ -41,6 +41,7 @@ alias dbreset="rdbd && rdbc && rdbm && rdbtp"
 
 # CONTAINERS
 alias docker="sudo docker"
+alias fig="sudo fig"
 alias dps="docker ps -a"
 alias drm="docker rm"
 function db_create () {
@@ -56,7 +57,7 @@ alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
 alias gcam="gc -a -m"
-alias gpl="git pull"
+alias gpl="git pull origin `git rev-parse --abbrev-ref HEAD`"
 
 # Fix oh-my-zsh's git plugin conflict
 if type gclean > /dev/null; then
