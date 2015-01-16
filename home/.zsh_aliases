@@ -57,7 +57,10 @@ alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
 alias gcam="gc -a -m"
-alias gpl="git pull origin `git rev-parse --abbrev-ref HEAD`"
+
+function gpl () {
+  git pull origin $(git rev-parse --abbrev-ref HEAD)
+}
 
 # Fix oh-my-zsh's git plugin conflict
 if type gclean > /dev/null; then
@@ -65,10 +68,10 @@ if type gclean > /dev/null; then
 fi
 
 function gclean () {
-   ggpull &&
-   git remote prune origin &&
-   git fetch &&
-   git branch -a --merged | grep -v -E 'master|stable|staging|pull|'`git rev-parse --abbrev-ref HEAD` | sed 's/^/git branch -d/' | sed 's/branch -d remotes\/origin\//push origin :/'
+  ggpull &&
+  git remote prune origin &&
+  git fetch &&
+  git branch -a --merged | grep -v -E 'master|stable|staging|pull|'`git rev-parse --abbrev-ref HEAD` | sed 's/^/git branch -d/' | sed 's/branch -d remotes\/origin\//push origin :/'
  }
 
 function gi() {
