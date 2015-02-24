@@ -14,6 +14,6 @@
     default = current
 
 [core]
-    editor = subl
+    editor = vi
     excludesfile = ~/.gitignore_global
     whitespace = space-before-tab,cr-at-eol

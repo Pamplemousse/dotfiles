@@ -66,9 +66,8 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.sh"
 homeshick --quiet refresh
 
-# Load nmv and enable nodejs 0.11
+# Load nmv and enable iojs
 source ~/.nvm/nvm.sh
-nvm use 0.11
+nvm use iojs
 
-### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

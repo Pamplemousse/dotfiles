@@ -6,7 +6,7 @@ alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
 alias sshc="edit ~/.ssh/config"
 alias gemc="edit ~/.gemrc"
-
+alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar ~/Workspace/tools/burp.jar"
 
 
 # CURL
@@ -32,6 +32,8 @@ alias gitc="edit $HOME/.gitconfig"
 
 # RAILS
 alias be="bundle exec"
+alias bi="bundle install"
+alias bu="bundle update"
 alias rdbc="rake db:create"
 alias rdbm="rake db:migrate"
 alias rdbtp="rake db:test:prepare"
