@@ -31,5 +31,9 @@
     "context": [
       { "key": "text", "operator": "regex_contains", "operand": "\n" }
     ]
-  }
+  },
+  { "keys": ["ctrl+k", "ctrl+up"], "command": "new_pane", "args": {"move": false} },
+  { "keys": ["ctrl+k", "ctrl+down"], "command": "close_pane" },
+  { "keys": ["alt+left"], "command": "focus_neighboring_group" },
+  { "keys": ["alt+right"], "command": "focus_neighboring_group" },
 ]

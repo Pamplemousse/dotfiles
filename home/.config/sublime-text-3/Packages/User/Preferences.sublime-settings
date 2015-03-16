@@ -38,6 +38,10 @@
 	[
 		"Vintage"
 	],
+	"ignored_words":
+	[
+		"color"
+	],
 	"indent_to_bracket": true,
 	"show_encoding": true,
 	"show_line_endings": true,
