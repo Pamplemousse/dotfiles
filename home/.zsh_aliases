@@ -55,6 +55,7 @@ alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
 alias gcam="gc -a -m"
+alias gcamend="gca --amend"
 
 function gpl () {
   git pull origin $(git rev-parse --abbrev-ref HEAD)
