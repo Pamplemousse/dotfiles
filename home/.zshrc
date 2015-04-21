@@ -37,6 +37,11 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+alias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.sh"
+homeshick --quiet refresh
+
 source $ZSH/oh-my-zsh.sh
 
 # LOAD ALL ALIASES
@@ -85,10 +90,6 @@ bindkey "\e[Z" reverse-menu-complete # shift-tab to reverse menu
 
 unset -f work_in_progress
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-alias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.sh"
-homeshick --quiet refresh
-
 # Load nmv and enable iojs
 source ~/.nvm/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
@@ -96,3 +97,6 @@ nvm use iojs
 
 # RVM Configuration: Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Compile the .ssh/config file
+`cat $HOME/.ssh/conf.d/* > $HOME/.ssh/config`

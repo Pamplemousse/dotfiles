@@ -13,6 +13,7 @@
 		"Better CoffeeScript",
 		"DevDocs",
 		"Dictionaries",
+		"DocBlockr",
 		"Emmet",
 		"GitGutter",
 		"HTML-CSS-JS Prettify",
@@ -28,6 +29,8 @@
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-ruby",
 		"SublimeREPL",
 		"Zeal",
 		"Zen Tabs"

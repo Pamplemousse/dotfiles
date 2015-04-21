@@ -1,6 +1,6 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/RailsCastsColorScheme (SL).tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
