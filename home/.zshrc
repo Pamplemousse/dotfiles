@@ -93,7 +93,7 @@ unset -f work_in_progress
 # Load nmv and enable iojs
 source ~/.nvm/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-nvm use iojs
+nvm use 0.12
 
 # RVM Configuration: Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

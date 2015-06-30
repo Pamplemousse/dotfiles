@@ -4,7 +4,7 @@ alias lla="ls -alh"
 alias duh="du -h . | grep '\./[^/]*$'"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
-alias sshc="edit ~/.ssh/config"
+alias sshc="edit ~/.ssh/conf.d"
 alias gemc="edit ~/.gemrc"
 alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar ~/Workspace/tools/burp.jar"
 alias internet\?="ping 8.8.8.8"
@@ -39,9 +39,9 @@ alias dbreset="rdbd && rdbc && rdbm && rdbtp"
 
 # CONTAINERS
 alias docker="sudo docker"
-alias fig="sudo fig"
 alias dps="docker ps -a"
 alias drm="docker rm"
+alias dstop="docker stop"
 function db_create () {
    sudo docker run -p 5432:5432 --name db_postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 }
