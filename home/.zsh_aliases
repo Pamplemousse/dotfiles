@@ -56,7 +56,6 @@ alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(gree
 alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
-alias gcam="gc -a -m"
 alias gcamend="gca --amend"
 
 function gpl () {
