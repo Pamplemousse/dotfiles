@@ -1,0 +1,3 @@
+! Swap 'w' and 'à'
+keycode 52 =  w W VoidSymbol VoidSymbol backslash
+keycode 35 = agrave Agrave VoidSymbol VoidSymbol VoidSymbol
