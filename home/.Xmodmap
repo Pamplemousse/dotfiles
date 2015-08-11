@@ -1,3 +1,9 @@
 ! Swap 'w' and 'à'
 keycode 52 =  w W VoidSymbol VoidSymbol backslash
 keycode 35 = agrave Agrave VoidSymbol VoidSymbol VoidSymbol
+
+! Put < prior to «
+keycode 11 = less 2 VoidSymbol VoidSymbol guillemotleft
+
+! Put > prior to »
+keycode 12 = greater 3 VoidSymbol VoidSymbol guillemotright
