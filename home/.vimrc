@@ -59,6 +59,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+" Set of default options
+Bundle 'tpope/vim-sensible'
+
 " Syntax highlight
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-markdown'
