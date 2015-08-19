@@ -26,7 +26,7 @@ plugins=(git python bundler rails ruby rvm tmux nvm grunt docker)
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="candy"
-EDITOR="subl -w"
+EDITOR="vim"
 COMPLETION_WAITING_DOTS="true"
 
 ZSH_TMUX_AUTOSTART=true
