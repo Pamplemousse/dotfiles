@@ -63,6 +63,7 @@ Plugin 'gmarik/Vundle.vim'
 Bundle 'tpope/vim-sensible'
 
 " Syntax highlight
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-markdown'
 
