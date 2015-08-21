@@ -90,7 +90,7 @@ bindkey "\e[Z" reverse-menu-complete # shift-tab to reverse menu
 
 unset -f work_in_progress
 
-# Load nmv and enable iojs
+# Load nmv
 source ~/.nvm/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 nvm use 0.12
