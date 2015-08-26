@@ -12,7 +12,7 @@ set t_Co=256                                " Support for xterm with 256 colors
 set ruler                                   " Show ruler
 set noswapfile                              " Don't create annoying *.swp files
 set scrolloff=5                             " Start scrolling the file 5 lines before the end of the window
-set spelllang=en_uk                         " Set default spelling language to English (Australia)
+set spelllang=en_uk                         " Set default spelling language to English
 set wildmenu                                " Make tab completion act more like bash
 set wildmode=list:longest                   " Tab complete to longest common string, like bash
 set showcmd                                 " Display an incomplete command in the lower right corner
@@ -45,9 +45,6 @@ set autoindent                              " Automatic indentation in non-C fil
 let g:is_posix = 1                          " Better highlighting of shell files
 
 filetype plugin indent on                   " Enable automatic filetype detection, filetype-specific plugins/indentation
-
-" Key binding
-map <C-n> :NERDTreeToggle<CR>
 
 " Colorscheme
 syntax enable
