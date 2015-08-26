@@ -68,6 +68,10 @@ Bundle 'tpope/vim-markdown'
 Bundle 'mattn/emmet-vim'
 Bundle 'bronson/vim-trailing-whitespace'
 
+" Navigation
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+
 call vundle#end()
 
 source ~/.vimrc.bepo
