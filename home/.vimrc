@@ -5,8 +5,9 @@ endif
 " Misc
 set nocompatible                            " be iMproved, required
 filetype off
-set nowrap                                  " I don't always wrap lines...
-set linebreak                               " ...but when I do, I wrap whole words.
+set wrap                                    " Wrap lines...
+set linebreak                               " ... whole words ...
+set nolist                                  " .. but disables linebreak
 set number                                  " Show line numbers
 set t_Co=256                                " Support for xterm with 256 colors
 set ruler                                   " Show ruler
