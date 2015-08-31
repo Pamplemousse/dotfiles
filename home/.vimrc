@@ -68,6 +68,7 @@ Bundle 'tpope/vim-markdown'
 " Editing
 Bundle 'mattn/emmet-vim'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'tpope/vim-surround'
 
 " Navigation
 Bundle 'kien/ctrlp.vim'
