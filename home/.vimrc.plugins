@@ -1,0 +1,27 @@
+" Manage plugins with Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+" Set of default options
+Bundle 'tpope/vim-sensible'
+
+" Syntax highlight
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-markdown'
+Bundle 'ngmy/vim-rubocop'
+
+" Visual
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" Editing
+Bundle 'mattn/emmet-vim'
+Bundle 'bronson/vim-trailing-whitespace'
+
+" Navigation
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+
+call vundle#end()

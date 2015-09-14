@@ -51,29 +51,5 @@ filetype plugin indent on                   " Enable automatic filetype detectio
 syntax enable
 set background=dark
 
-" Manage plugins with Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-
-" Set of default options
-Bundle 'tpope/vim-sensible'
-
-" Syntax highlight
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-markdown'
-
-" Editing
-Bundle 'mattn/emmet-vim'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'tpope/vim-surround'
-
-" Navigation
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-
-call vundle#end()
-
+source ~/.vimrc.plugins
 source ~/.vimrc.bepo
