@@ -11,17 +11,18 @@ Bundle 'tpope/vim-sensible'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-markdown'
-Bundle 'ngmy/vim-rubocop'
+Bundle 'scrooloose/syntastic'
 
 " Visual
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'airblade/vim-gitgutter'
 
 " Editing
 Bundle 'mattn/emmet-vim'
+Bundle 'ervandew/supertab'
 Bundle 'bronson/vim-trailing-whitespace'
 
 " Navigation
 Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
 
 call vundle#end()
