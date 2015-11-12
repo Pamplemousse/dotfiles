@@ -50,6 +50,7 @@ filetype plugin indent on                   " Enable automatic filetype detectio
 " Colorscheme
 syntax enable
 set background=dark
+colorscheme slate
 
 source ~/.vimrc.plugins
 source ~/.vimrc.bepo
