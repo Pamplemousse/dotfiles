@@ -24,6 +24,10 @@ set autoread
 set cursorline
 set backspace=indent,eol,start              " Make backspace behave rationally
 
+" Cool autocompletion for tabs
+set wildmode=longest,list,full
+set wildmenu
+
 " Change the invisible characters
 set listchars=trail:.,tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
