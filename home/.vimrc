@@ -8,7 +8,6 @@ filetype off
 set wrap                                    " Wrap lines...
 set linebreak                               " ... whole words ...
 set nolist                                  " .. but disables linebreak
-set number                                  " Show line numbers
 set t_Co=256                                " Support for xterm with 256 colors
 set ruler                                   " Show ruler
 set noswapfile                              " Don't create annoying *.swp files
