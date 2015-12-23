@@ -37,6 +37,7 @@ logfile
 .env
 .rake_tasks
 .bin/
+tags
 
 rails_best_practices_output.html
 
