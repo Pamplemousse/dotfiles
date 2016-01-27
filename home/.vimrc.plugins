@@ -23,6 +23,7 @@ Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'mattn/emmet-vim'
 Bundle 'ervandew/supertab'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'tpope/vim-endwise'
 
 " Navigation
 Bundle 'kien/ctrlp.vim'
