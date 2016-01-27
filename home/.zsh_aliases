@@ -26,7 +26,6 @@ alias reload="echo \`pwd\` > $HOME/.RELOAD && source ~/.zshrc"
 
 alias zshc="edit $HOME/.zshrc"
 alias zsha="edit $HOME/.zsh_aliases"
-alias gitc="edit $HOME/.gitconfig"
 
 
 # RAILS
@@ -52,11 +51,13 @@ alias db_stop="sudo docker stop db_postgres"
 
 
 # GIT
+alias gst="git status -s"
 alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(green)[%cn]' --decorate --date=short --graph"
 alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
 alias gcamend="gca --amend"
+alias gitc="edit $HOME/.gitconfig"
 
 function gpl () {
   git pull origin $(git rev-parse --abbrev-ref HEAD)

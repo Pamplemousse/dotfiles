@@ -19,3 +19,7 @@
     whitespace = space-before-tab,cr-at-eol
 [grep]
 	lineNumber = true
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
