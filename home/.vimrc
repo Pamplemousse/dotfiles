@@ -50,11 +50,6 @@ let g:is_posix = 1                          " Better highlighting of shell files
 
 filetype plugin indent on                   " Enable automatic filetype detection, filetype-specific plugins/indentation
 
-" Colorscheme
-syntax enable
-set background=dark
-colorscheme slate
-
 source ~/.vimrc.plugins
 source ~/.vimrc.bepo
 
@@ -69,6 +64,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['standard']
+
+" Colorscheme
+syntax enable
+set t_Co=256
+colorscheme OceanicNext
+set background=dark
 
 " CamelCaseMotion for bépo
 map <silent> é <Plug>CamelCaseMotion_w
