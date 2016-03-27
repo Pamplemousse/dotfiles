@@ -17,8 +17,8 @@ My personnal dotfiles.
     homeshick cd dotfiles
     git commit -a -m "awesome commit message"
     git push origin master
-    
-    
+
+
 ### Updating a computer's config
 
     homeshick cd dotfiles

@@ -19,7 +19,7 @@ setopt glob_complete          # complete globs instead of expanding
 setopt complete_in_word
 setopt always_to_end
 
-export EMAIL="xavier.maso@net-c.com"
+export EMAIL="xav.maso@gmail.com"
 export FULLNAME="Xavier Maso"
 
 plugins=(git python bundler rails ruby rvm tmux nvm grunt docker ssh-agent)

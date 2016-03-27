@@ -1,4 +1,4 @@
-# GENERAL
+# general
 alias edit="vim"
 alias lla="ls -alh"
 alias duh="du -h . | grep '\./[^/]*$'"
@@ -10,13 +10,7 @@ alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar ~/W
 alias internet\?="ping 8.8.8.8"
 
 
-# CURL
-alias get="curl -O"
-alias workon="echo \`pwd\` > $HOME/.WORK_ON"
-alias workoff="rm $HOME/.WORK_ON"
-
-
-# ZSH
+# zsh
 alias npm="nocorrect npm"
 alias grunt="nocorrect grunt"
 alias guard="nocorrect guard"
@@ -28,7 +22,8 @@ alias zshc="edit $HOME/.zshrc"
 alias zsha="edit $HOME/.zsh_aliases"
 
 
-# RAILS
+# ruby / rails
+alias pry="docker run --rm -it pamplemousse/ruby"
 alias rdbc="rake db:create"
 alias rdbm="rake db:migrate"
 alias rdbtp="rake db:test:prepare"
@@ -36,7 +31,7 @@ alias rdbs="rake db:seed"
 alias dbreset="rdbd && rdbc && rdbm && rdbtp"
 
 
-# CONTAINERS
+# docker
 alias dps="docker ps -a"
 alias drm="docker rm"
 alias dstop="docker stop"
@@ -44,7 +39,7 @@ alias dlg="docker logs"
 alias drmi="docker rmi"
 
 
-# GIT
+# git
 alias gst="git status -s"
 alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(green)[%cn]' --decorate --date=short --graph"
 alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
@@ -58,7 +53,7 @@ function gpl () {
 }
 
 
-# STUFF
+# misc
 
 # Custom search
 search () {
