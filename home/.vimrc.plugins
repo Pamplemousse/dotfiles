@@ -26,6 +26,7 @@ Bundle 'ervandew/supertab'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'tpope/vim-endwise'
 Bundle 'bkad/CamelCaseMotion'
+Bundle 'vim-scripts/tComment'
 
 " Navigation
 Bundle 'kien/ctrlp.vim'

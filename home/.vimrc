@@ -1,5 +1,6 @@
 if has("autocmd")
   autocmd! bufwritepost .vimrc source ~/.vimrc
+  autocmd! bufwritepost .vimrc.plugins source ~/.vimrc
 endif
 
 " Misc
