@@ -73,4 +73,8 @@ set background=dark
 
 " CamelCaseMotion for bépo
 map <silent> é <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
 sunmap é
+sunmap b
+sunmap e
