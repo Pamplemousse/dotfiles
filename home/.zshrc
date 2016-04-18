@@ -87,7 +87,7 @@ bindkey "\e[Z" reverse-menu-complete # shift-tab to reverse menu
 
 unset -f work_in_progress
 
-# Load nmv
+# Load nvm
 source ~/.nvm/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 nvm use 5
