@@ -4,8 +4,11 @@ alias lla="ls -alh"
 alias duh="du -h . | grep '\./[^/]*$'"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
+
 alias sshc="edit ~/.ssh/conf.d"
 alias gemc="edit ~/.gemrc"
+alias vimc="vim -p $HOME/.vimrc $HOME/.vimrc.plugins $HOME/.vimrc.bepo"
+
 alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar ~/Workspace/tools/burp.jar"
 alias internet\?="ping 8.8.8.8"
 
