@@ -42,6 +42,38 @@ alias dlg="docker logs"
 alias drmi="docker rmi"
 
 
+# ansible
+ansible_image="pamplemousse/ansible"
+
+alias ansible="\
+  docker run \
+    --name ansible \
+    --rm \
+    ${ansible_image} \
+    ansible"
+
+alias ansible-playbook="\
+  docker run \
+    --name ansible-playbook \
+    -it --rm \
+    --volume $(pwd):/home/ansible/project \
+    -w /home/ansible/project \
+    --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
+    --volume ${HOME}/.ssh/config:/home/ansible/.ssh/config:ro \
+    --volume ${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro \
+    ${ansible_image} \
+    ansible-playbook"
+
+alias ansible-galaxy="\
+  docker run \
+    --name ansible-galaxy \
+    --rm \
+    --volume $(pwd):/home/ansible/project \
+    -w /home/ansible/project \
+    ${ansible_image} \
+    ansible-galaxy"
+
+
 # git
 alias gst="git status -s"
 alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(green)[%cn]' --decorate --date=short --graph"
