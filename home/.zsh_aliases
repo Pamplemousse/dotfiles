@@ -5,7 +5,7 @@ alias duh="du -h . | grep '\./[^/]*$'"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
 
-alias sshc="edit ~/.ssh/conf.d"
+alias sshc="vim -p ~/.ssh/conf.d/*"
 alias gemc="edit ~/.gemrc"
 alias vimc="vim -p $HOME/.vimrc $HOME/.vimrc.plugins $HOME/.vimrc.bepo"
 
