@@ -16,9 +16,6 @@ alias internet\?="ping 8.8.8.8"
 # zsh
 alias npm="nocorrect npm"
 alias grunt="nocorrect grunt"
-alias guard="nocorrect guard"
-alias rspec="nocorrect rspec"
-alias guard="guard --no-bundler-warning"
 alias reload="echo \`pwd\` > $HOME/.RELOAD && source ~/.zshrc"
 
 alias zshc="edit $HOME/.zshrc"
@@ -32,6 +29,18 @@ alias rdbm="rake db:migrate"
 alias rdbtp="rake db:test:prepare"
 alias rdbs="rake db:seed"
 alias dbreset="rdbd && rdbc && rdbm && rdbtp"
+
+alias bundle="docker run --rm -v $(pwd):/app -w /app ruby bundle"
+alias rubocop="docker run --rm -v $(pwd):/app -w /app pamplemousse/ruby rubocop"
+
+function ruby() {
+  docker run \
+    --rm  -it \
+    --volume $(pwd):/app \
+    -w /app \
+    pamplemousse/ruby \
+    ruby $@
+}
 
 
 # docker

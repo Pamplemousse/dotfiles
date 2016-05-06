@@ -22,7 +22,7 @@ setopt always_to_end
 export EMAIL="xav.maso@gmail.com"
 export FULLNAME="Xavier Maso"
 
-plugins=(git python bundler rails ruby rvm tmux nvm grunt docker ssh-agent)
+plugins=(git python bundler rails ruby tmux nvm grunt docker ssh-agent)
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="candy"
@@ -52,7 +52,6 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH=$PATH:$HOME/.rvm/bin
 
 # Force a reload of completion system if nothing matched; this fixes installing
 # a program and then trying to tab-complete its name
@@ -91,9 +90,6 @@ unset -f work_in_progress
 source ~/.nvm/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 nvm use 5
-
-# RVM Configuration: Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Compile the .ssh/config file
 `cat $HOME/.ssh/conf.d/* > $HOME/.ssh/config`
