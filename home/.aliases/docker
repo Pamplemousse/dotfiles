@@ -1,0 +1,5 @@
+alias dps="docker ps -a"
+alias drm="docker rm"
+alias dstop="docker stop"
+alias dlg="docker logs"
+alias drmi="docker rmi"

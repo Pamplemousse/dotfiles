@@ -1,0 +1,20 @@
+alias pry="docker run --rm -it pamplemousse/ruby"
+
+alias rdbc="rake db:create"
+alias rdbm="rake db:migrate"
+alias rdbtp="rake db:test:prepare"
+alias rdbs="rake db:seed"
+alias dbreset="rdbd && rdbc && rdbm && rdbtp"
+
+alias bundle="docker run --rm -v $(pwd):/app -w /app ruby bundle"
+alias bi="bundle install"
+
+alias rubocop="docker run --rm -v $(pwd):/app -w /app pamplemousse/ruby rubocop"
+
+alias ruby="\
+  docker run \
+    --rm  -it \
+    --volume $(pwd):/app \
+    -w /app \
+    pamplemousse/ruby \
+    ruby"

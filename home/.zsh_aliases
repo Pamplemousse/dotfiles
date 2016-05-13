@@ -1,6 +1,5 @@
 # general
 alias edit="vim"
-alias lla="ls -alh"
 alias duh="du -h . | grep '\./[^/]*$'"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n `cat ~/.ssh/id_rsa.pub` | xclip -selection clipboard"
@@ -20,85 +19,6 @@ alias reload="echo \`pwd\` > $HOME/.RELOAD && source ~/.zshrc"
 
 alias zshc="edit $HOME/.zshrc"
 alias zsha="edit $HOME/.zsh_aliases"
-
-
-# ruby / rails
-alias pry="docker run --rm -it pamplemousse/ruby"
-alias rdbc="rake db:create"
-alias rdbm="rake db:migrate"
-alias rdbtp="rake db:test:prepare"
-alias rdbs="rake db:seed"
-alias dbreset="rdbd && rdbc && rdbm && rdbtp"
-
-alias bundle="docker run --rm -v $(pwd):/app -w /app ruby bundle"
-alias rubocop="docker run --rm -v $(pwd):/app -w /app pamplemousse/ruby rubocop"
-
-function ruby() {
-  docker run \
-    --rm  -it \
-    --volume $(pwd):/app \
-    -w /app \
-    pamplemousse/ruby \
-    ruby $@
-}
-
-
-# docker
-alias dps="docker ps -a"
-alias drm="docker rm"
-alias dstop="docker stop"
-alias dlg="docker logs"
-alias drmi="docker rmi"
-
-
-# ansible
-ansible_image="pamplemousse/ansible"
-ansible_path="${HOME}/Workspace/tools/ansible"
-
-alias ansible="\
-  docker run \
-    --name ansible \
-    --rm \
-    --volume ${ansible_path}:/ansible \
-    ${ansible_image} \
-    ansible"
-
-alias ansible-playbook="\
-  docker run \
-    --name ansible-playbook \
-    -it --rm \
-    --volume ${ansible_path}:/ansible \
-    --volume $(pwd):/home/ansible/project \
-    -w /home/ansible/project \
-    --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
-    --volume ${HOME}/.ssh/config:/home/ansible/.ssh/config:ro \
-    --volume ${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro \
-    ${ansible_image} \
-    ansible-playbook"
-
-alias ansible-galaxy="\
-  docker run \
-    --name ansible-galaxy \
-    --rm \
-    --volume ${ansible_path}:/ansible \
-    --volume $(pwd):/home/ansible/project \
-    -w /home/ansible/project \
-    ${ansible_image} \
-    ansible-galaxy"
-
-
-# git
-alias gst="git status -s"
-alias gll="git log --pretty=format:'%C(yellow)%h %C(cyan)%ad %C(reset)%s %C(green)[%cn]' --decorate --date=short --graph"
-alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
-alias gds="git diff --staged"
-alias gap="git add -p"
-alias gcamend="gca --amend"
-alias gitc="edit $HOME/.gitconfig"
-
-function gpl () {
-  git pull origin $(git rev-parse --abbrev-ref HEAD)
-}
 
 
 # misc
@@ -142,3 +62,7 @@ function not_ok() {
 function save () {
   sed -i.bak '' "$@"
 }
+
+for alias_file in $(ls ~/.aliases/); do
+  source ~/.aliases/"$alias_file"
+done

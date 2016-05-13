@@ -1,0 +1,33 @@
+ansible_image="pamplemousse/ansible"
+ansible_path="${HOME}/Workspace/tools/ansible"
+
+alias ansible="\
+  docker run \
+    --name ansible \
+    --rm \
+    --volume ${ansible_path}:/ansible \
+    ${ansible_image} \
+    ansible"
+
+alias ansible-playbook="\
+  docker run \
+    --name ansible-playbook \
+    -it --rm \
+    --volume ${ansible_path}:/ansible \
+    --volume $(pwd):/home/ansible/project \
+    -w /home/ansible/project \
+    --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
+    --volume ${HOME}/.ssh/config:/home/ansible/.ssh/config:ro \
+    --volume ${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro \
+    ${ansible_image} \
+    ansible-playbook"
+
+alias ansible-galaxy="\
+  docker run \
+    --name ansible-galaxy \
+    --rm \
+    --volume ${ansible_path}:/ansible \
+    --volume $(pwd):/home/ansible/project \
+    -w /home/ansible/project \
+    ${ansible_image} \
+    ansible-galaxy"
