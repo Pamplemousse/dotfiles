@@ -42,9 +42,9 @@ homeshick --quiet refresh
 source $ZSH/oh-my-zsh.sh
 
 # LOAD ALL ALIASES
-if [ -f ~/.zsh_aliases ]; then
-  source ~/.zsh_aliases
-fi
+for alias_file in $(ls ~/.aliases/); do
+  source ~/.aliases/"$alias_file"
+done
 
 export PATH=".bin:$PATH"
 export PATH="/usr/local/lib/node:$PATH"

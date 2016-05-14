@@ -1,0 +1,45 @@
+# general
+alias edit="vim"
+alias duh="du -h . | grep '\./[^/]*$'"
+alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
+alias myssh="echo -n $(cat "$HOME"/.ssh/id_rsa.pub) | xclip -selection clipboard"
+
+alias sshc="vim -p $HOME/.ssh/conf.d/*"
+alias gemc="edit $HOME/.gemrc"
+alias vimc="vim -p $HOME/.vimrc*"
+
+alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar $HOME/Workspace/tools/burp.jar"
+alias internet\?="ping 8.8.8.8"
+
+
+# zsh
+alias npm="nocorrect npm"
+alias grunt="nocorrect grunt"
+alias reload="echo $(pwd) > $HOME/.RELOAD && source $HOME/.zshrc"
+
+alias zshc="edit $HOME/.zshrc"
+alias zsha="vim -p $HOME/.aliases/*"
+
+
+# misc
+
+# Custom search
+search () {
+  for i in "$@"; do
+    ( find -iname "*$i*" | grep -i "$i" --color=auto ) 2> /dev/null;
+  done
+}
+
+# Completion on ssh config's hosts
+h=()
+if [[ -r "$HOME"/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat "$HOME"/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+if [[ $#h -gt 0 ]]; then
+  zstyle ':completion:*:ssh:*' hosts $h
+  zstyle ':completion:*:slogin:*' hosts $h
+fi
+
+function save () {
+  sed -i.bak '' "$@"
+}
