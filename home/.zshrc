@@ -86,10 +86,5 @@ bindkey "\e[Z" reverse-menu-complete # shift-tab to reverse menu
 
 unset -f work_in_progress
 
-# Load nvm
-source ~/.nvm/nvm.sh
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-nvm use 5
-
 # Compile the .ssh/config file
 `cat $HOME/.ssh/conf.d/* > $HOME/.ssh/config`
