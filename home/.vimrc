@@ -14,8 +14,6 @@ set ruler                                   " Show ruler
 set noswapfile                              " Don't create annoying *.swp files
 set scrolloff=5                             " Start scrolling the file 5 lines before the end of the window
 set spelllang=en_uk                         " Set default spelling language to English
-set wildmenu                                " Make tab completion act more like bash
-set wildmode=list:longest                   " Tab complete to longest common string, like bash
 set showcmd                                 " Display an incomplete command in the lower right corner
 set showmode                                " Show current mode down the bottom
 set laststatus=2                            " Always show the status line
@@ -26,6 +24,7 @@ set backspace=indent,eol,start              " Make backspace behave rationally
 
 " Cool autocompletion for tabs
 set wildmode=longest,list,full
+set wildignore+=*.retry
 set wildmenu
 
 " Change the invisible characters
