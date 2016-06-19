@@ -1,0 +1,15 @@
+alias python="\
+  docker run \
+    --name python \
+    --rm -it \
+    -v $(pwd):/app \
+    -w /app \
+    pamplemousse/python \
+    python"
+
+alias http-prompt="\
+  docker run \
+    --name http-prompt \
+    --rm -it \
+    pamplemousse/python \
+    http-prompt"
