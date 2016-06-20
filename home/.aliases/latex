@@ -1,0 +1,8 @@
+alias pdflatex="\
+  docker run \
+    --name pdflatex \
+    --rm -it \
+    -v $(pwd):/app \
+    -w /app \
+    pamplemousse/latex \
+    pdflatex"
