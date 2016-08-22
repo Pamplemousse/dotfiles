@@ -1,5 +1,10 @@
+# engine
+alias dlg="docker logs"
 alias dps="docker ps -a"
 alias drm="docker rm"
-alias dstop="docker stop"
-alias dlg="docker logs"
 alias drmi="docker rmi"
+alias dstop="docker stop"
+
+# volumes
+alias dvls="docker volume ls"
+alias dvrm="docker volume rm"

@@ -31,3 +31,13 @@ alias ansible-galaxy="\
     -w /home/ansible/project \
     ${ansible_image} \
     ansible-galaxy"
+
+alias ansible-vault="\
+  docker run \
+    --name ansible-vault \
+    -it --rm \
+    --volume ${ansible_path}:/ansible \
+    --volume $(pwd):/home/ansible/project \
+    -w /home/ansible/project \
+    ${ansible_image} \
+    ansible-vault"
