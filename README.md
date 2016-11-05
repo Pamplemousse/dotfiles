@@ -28,5 +28,5 @@ My personnal dotfiles.
 
 ### Help and documentation
 
-  - installation : https://github.com/andsens/homeshick/wiki/Installation
-  - tutorials    : https://github.com/andsens/homeshick/wiki/Tutorials
+  - [installation](https://github.com/andsens/homeshick/wiki/Installation)
+  - [tutorials](https://github.com/andsens/homeshick/wiki/Tutorials)
