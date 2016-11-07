@@ -1,6 +1,6 @@
 # general
 alias edit="vim"
-alias duh="du -h . | grep '\./[^/]*$'"
+alias duh="du -h -d 1"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n $(cat "$HOME"/.ssh/id_rsa.pub) | xclip -selection clipboard"
 
@@ -13,8 +13,6 @@ alias internet\?="ping 8.8.8.8"
 
 
 # zsh
-alias npm="nocorrect npm"
-alias grunt="nocorrect grunt"
 alias reload="echo $(pwd) > $HOME/.RELOAD && source $HOME/.zshrc"
 
 alias zshc="edit $HOME/.zshrc"
@@ -22,7 +20,6 @@ alias zsha="vim -p $HOME/.aliases/*"
 
 
 # misc
-
 alias pshtt="docker run --rm -it \
   -v $(pwd):/data \
   pamplemousse/pshtt"
