@@ -2,30 +2,24 @@ alias http-server=" \
   docker run \
     --name http-server \
     --rm -it \
-    -e USER_ID=$(id -u) \
-    -e GROUP_ID=$(id -g) \
     -p 8080:8080 \
     -v $(pwd):/data \
     -w /data \
     pamplemousse/nodejs \
     http-server"
 
-function node() {
+alias node=" \
   docker run \
     --rm -it \
-    -e USER_ID=$(id -u) \
-    -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
     pamplemousse/nodejs \
     "node $@"
 }
 
-function npm() {
+alias npm=" \
   docker run \
     --rm -it \
-    -e USER_ID=$(id -u) \
-    -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
     pamplemousse/nodejs \
@@ -35,8 +29,6 @@ function npm() {
 alias nsp=" \
   docker run \
     --rm -it \
-    -e USER_ID=$(id -u) \
-    -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
     pamplemousse/nodejs \
@@ -46,8 +38,6 @@ alias standard=" \
   docker run \
     --name http-server \
     --rm \
-    -e USER_ID=$(id -u) \
-    -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
     pamplemousse/nodejs \
