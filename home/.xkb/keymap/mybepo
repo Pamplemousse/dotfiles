@@ -1,0 +1,7 @@
+xkb_keymap {
+	xkb_keycodes  { include "evdev+aliases(azerty)"	};
+	xkb_types     { include "complete"	};
+	xkb_compat    { include "complete+ledscroll(group_lock)"	};
+	xkb_symbols   { include "pc+fr(bepo)+inet(evdev)+myswap(swap_egrave_w)+myswap(swap_guillemots_less_and_greater)"	};
+	xkb_geometry  { include "pc(pc105)"	};
+};

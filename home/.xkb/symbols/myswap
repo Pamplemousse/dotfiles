@@ -1,0 +1,9 @@
+partial modifier_keys
+xkb_symbols "swap_egrave_w" {
+     replace key <AD05>  { [ w, W ] };
+     replace key <AD12> { [ egrave, Egrave ] };
+};
+xkb_symbols "swap_guillemots_less_and_greater" {
+     replace key <AE02> { [ less, 2, guillemotleft ] };
+     replace key <AE03> { [ greater, 3, guillemotright ] };
+};

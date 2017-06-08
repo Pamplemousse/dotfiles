@@ -1,0 +1,4 @@
+ID=$(xinput list | grep TypeMatrix | grep keyboard | sed 's/.*id=\([0-9]*\).*/\1/')
+
+setxkbmap -device $ID -layout fr bepo
+xkbcomp -i $ID -I$HOME/.xkb ~/.xkb/keymap/mybepo $DISPLAY
