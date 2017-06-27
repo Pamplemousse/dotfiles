@@ -7,7 +7,7 @@ alias http-server=" \
     -p 8080:8080 \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/node \
+    pamplemousse/nodejs \
     http-server"
 
 function node() {
@@ -17,7 +17,7 @@ function node() {
     -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/node \
+    pamplemousse/nodejs \
     "node $@"
 }
 
@@ -28,7 +28,7 @@ function npm() {
     -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/node \
+    pamplemousse/nodejs \
     "npm $@"
 }
 
@@ -39,7 +39,7 @@ alias nsp=" \
     -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/node \
+    pamplemousse/nodejs \
     nsp"
 
 alias standard=" \
@@ -50,5 +50,5 @@ alias standard=" \
     -e GROUP_ID=$(id -g) \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/node \
+    pamplemousse/nodejs \
     standard"
