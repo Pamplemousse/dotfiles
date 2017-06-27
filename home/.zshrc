@@ -47,8 +47,6 @@ for alias_file in $(ls ~/.aliases/); do
 done
 
 export PATH=".bin:$PATH"
-export PATH="/usr/local/lib/node:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
