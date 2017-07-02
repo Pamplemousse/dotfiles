@@ -8,6 +8,16 @@ alias http-server=" \
     pamplemousse/nodejs \
     http-server"
 
+alias json-server=" \
+  docker run \
+    --name json-server \
+    --rm -it \
+    -p 3000:3000 \
+    -v $(pwd):/data \
+    -w /data \
+    pamplemousse/node \
+    json-server"
+
 alias node=" \
   docker run \
     --rm -it \
@@ -25,6 +35,14 @@ alias npm=" \
     pamplemousse/nodejs \
     "npm $@"
 }
+
+alias yarn=" \
+  docker run \
+    --rm -it \
+    -v $(pwd):/data \
+    -w /data \
+    pamplemousse/node \
+    yarn"
 
 alias nsp=" \
   docker run \
