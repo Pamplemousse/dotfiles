@@ -11,11 +11,21 @@ alias bundle="\
     --name bundle \
     --rm \
     -v $(pwd):/app \
+    -u 1000:1000 \
     -w /app \
     ruby \
     bundle"
 
 alias bi="bundle install"
+
+alias rspec="\
+  docker run \
+    --name rspec \
+    --rm \
+    -v $(pwd):/app \
+    -w /app \
+    pamplemousse/ruby \
+    rspec"
 
 alias rubocop="\
   docker run \
