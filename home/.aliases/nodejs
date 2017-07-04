@@ -23,18 +23,16 @@ alias node=" \
     --rm -it \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/nodejs \
-    "node $@"
-}
+    node \
+    node"
 
 alias npm=" \
   docker run \
     --rm -it \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/nodejs \
-    "npm $@"
-}
+    node \
+    npm"
 
 alias yarn=" \
   docker run \
