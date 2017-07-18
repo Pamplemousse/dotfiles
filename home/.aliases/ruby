@@ -44,3 +44,12 @@ alias ruby="\
     -w /app \
     pamplemousse/ruby \
     ruby"
+
+alias travis="\
+  docker run \
+    --name travis \
+    --rm -it \
+    -v $(pwd):/app \
+    -w /app \
+    pamplemousse/ruby \
+    travis"
