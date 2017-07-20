@@ -4,6 +4,7 @@ if has("autocmd")
 endif
 
 " Misc
+let mapleader=','
 set nocompatible                            " be iMproved, required
 filetype off
 set wrap                                    " Wrap lines...
@@ -22,7 +23,21 @@ set autoread
 set cursorline
 set backspace=indent,eol,start              " Make backspace behave rationally
 
-" Cool autocompletion for tabs
+set hidden
+
+" Buffers
+" To open a new empty buffer
+nmap <leader>T :enew<cr>
+" Move to the next buffer
+nmap <leader>r :bnext<CR>
+" Move to the previous buffer
+nmap <leader>c :bprevious<CR>
+" Close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+" Cool autocompletion
 set wildmode=longest,list,full
 set wildignore+=*.retry
 set wildmenu
@@ -52,6 +67,10 @@ filetype plugin indent on                   " Enable automatic filetype detectio
 
 source ~/.vimrc.plugins
 source ~/.vimrc.bepo
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Syntastic
 set statusline+=%#warningmsg#
