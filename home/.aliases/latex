@@ -6,3 +6,12 @@ alias pdflatex="\
     -w /app \
     pamplemousse/latex \
     pdflatex"
+
+alias bibtex="\
+  docker run \
+    --name bibtex \
+    --rm -it \
+    -v $(pwd):/app \
+    -w /app \
+    pamplemousse/latex \
+    bibtex"
