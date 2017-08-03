@@ -3,23 +3,27 @@
   email = xav.maso@gmail.com
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+
 [color "diff"]
-    whitespace = red reverse
+  whitespace = red reverse
 
 [push]
-    default = current
+  default = current
 
 [core]
-    editor = vi
-    excludesfile = ~/.gitignore
-    whitespace = space-before-tab,cr-at-eol
+  editor = vi
+  excludesfile = ~/.gitignore
+  whitespace = space-before-tab,cr-at-eol
+
 [grep]
-	lineNumber = true
+  lineNumber = true
+
 [pull]
-	rebase = true
+  rebase = true
+
 [rerere]
 	enabled = true
