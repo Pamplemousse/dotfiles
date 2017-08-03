@@ -14,7 +14,7 @@ set t_Co=256                                " Support for xterm with 256 colors
 set ruler                                   " Show ruler
 set noswapfile                              " Don't create annoying *.swp files
 set scrolloff=5                             " Start scrolling the file 5 lines before the end of the window
-set spelllang=en_uk                         " Set default spelling language to English
+set spelllang=en,fr                         " Set default spelling language to English and French
 set showcmd                                 " Display an incomplete command in the lower right corner
 set showmode                                " Show current mode down the bottom
 set laststatus=2                            " Always show the status line
@@ -60,6 +60,14 @@ set autoindent                              " Keep the indent when creating a ne
 set smarttab                                " Use shiftwidth and softtabstop to insert or delete (on <BS>) blanks
 set cindent                                 " Recommended seting for automatic C-style indentation
 set autoindent                              " Automatic indentation in non-C files
+
+" Spell checking
+augroup writing
+  autocmd!
+  au BufRead,BufNewFile *.md,*.bib,*.tex,*.txt setlocal spell spelllang=en,fr
+  au BufRead,BufNewFile *.md,*.bib,*.tex,*.txt set complete+=kspell
+  au BufRead,BufNewFile *.md,*.bib,*.tex,*.txt set spellsuggest=best,5
+augroup END
 
 let g:is_posix = 1                          " Better highlighting of shell files
 
