@@ -10,8 +10,6 @@ filetype off
 set wrap                                    " Wrap lines...
 set linebreak                               " ... whole words ...
 set nolist                                  " .. but disables linebreak
-set t_Co=256                                " Support for xterm with 256 colors
-set ruler                                   " Show ruler
 set noswapfile                              " Don't create annoying *.swp files
 set scrolloff=5                             " Start scrolling the file 5 lines before the end of the window
 set spelllang=en,fr                         " Set default spelling language to English and French
@@ -20,7 +18,6 @@ set showmode                                " Show current mode down the bottom
 set laststatus=2                            " Always show the status line
 set history=1000
 set autoread
-set cursorline
 set backspace=indent,eol,start              " Make backspace behave rationally
 
 set hidden
@@ -76,9 +73,19 @@ filetype plugin indent on                   " Enable automatic filetype detectio
 source ~/.vimrc.plugins
 source ~/.vimrc.bepo
 
+" Colorscheme
+syntax enable
+set t_Co=256
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+
+hi CursorLine cterm=NONE
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme='oceanicnext'
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -91,12 +98,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['standard']
-
-" Colorscheme
-syntax enable
-set t_Co=256
-colorscheme OceanicNext
-set background=dark
 
 " CamelCaseMotion for bépo
 map <silent> é <Plug>CamelCaseMotion_w
