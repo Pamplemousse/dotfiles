@@ -43,7 +43,7 @@ set wildmenu
 set listchars=trail:.,tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 " Searching
-set hlsearch                                " Highlight searches
+set nohlsearch                              " Do not hightlight search result
 set incsearch                               " Highlight search results instantly
 set ignorecase                              " Ignore case
 set smartcase                               " Override 'ignorecase' option if the search contains upper case characters.
