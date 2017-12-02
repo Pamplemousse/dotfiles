@@ -15,7 +15,7 @@ alias json-server=" \
     -p 3000:3000 \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/node \
+    pamplemousse/nodejs \
     json-server"
 
 alias node=" \
@@ -39,7 +39,7 @@ alias yarn=" \
     --rm -it \
     -v $(pwd):/data \
     -w /data \
-    pamplemousse/node \
+    pamplemousse/nodejs \
     yarn"
 
 alias nsp=" \
