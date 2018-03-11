@@ -24,7 +24,7 @@ export FULLNAME="Xavier Maso"
 
 plugins=(git python bundler rails ruby tmux nvm grunt docker ssh-agent)
 
-ZSH=$HOME/.oh-my-zsh
+ZSH=$(nix-env -q --out-path oh-my-zsh | cut -d' ' -f3)/share/oh-my-zsh
 ZSH_THEME="candy"
 EDITOR="vim"
 COMPLETION_WAITING_DOTS="true"
@@ -86,3 +86,7 @@ unset -f work_in_progress
 
 # Compile the .ssh/config file
 `cat $HOME/.ssh/conf.d/* > $HOME/.ssh/config`
+
+# Useful for keybase on nixos
+# https://github.com/NixOS/nixpkgs/issues/31261
+export NIX_SKIP_KEYBASE_CHECKS=1
