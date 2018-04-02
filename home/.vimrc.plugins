@@ -12,6 +12,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-markdown'
 Bundle 'digitaltoad/vim-pug'
+Bundle 'ElmCast/elm-vim'
 Bundle 'scrooloose/syntastic'
 
 " Visual
