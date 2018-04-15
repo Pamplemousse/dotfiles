@@ -10,7 +10,8 @@ Bundle 'tpope/vim-sensible'
 " Syntax highlight
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-markdown'
+Bundle 'godlygeek/tabular'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'digitaltoad/vim-pug'
 Bundle 'ElmCast/elm-vim'
 Bundle 'scrooloose/syntastic'
@@ -19,7 +20,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'mhartington/oceanic-next'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Editing
 Bundle 'mattn/emmet-vim'

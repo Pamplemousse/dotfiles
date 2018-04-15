@@ -19,6 +19,7 @@ set laststatus=2                            " Always show the status line
 set history=1000
 set autoread
 set backspace=indent,eol,start              " Make backspace behave rationally
+set number relativenumber
 
 set hidden
 
@@ -107,6 +108,9 @@ let g:syntastic_check_on_wq = 0
 let g:elm_syntastic_show_warnings = 1
 
 let g:syntastic_javascript_checkers = ['standard']
+
+" Vim-markdown
+let g:vim_markdown_toc_autofit = 1
 
 " CamelCaseMotion for bépo
 map <silent> é <Plug>CamelCaseMotion_w
