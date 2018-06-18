@@ -12,7 +12,7 @@ alias ansible="\
 alias ansible-playbook="\
   docker run \
     --name ansible-playbook \
-    -it --rm \
+    --rm -it \
     --volume ${ansible_path}:/ansible \
     --volume $(pwd):/home/ansible/project \
     --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
@@ -35,7 +35,7 @@ alias ansible-galaxy="\
 alias ansible-vault="\
   docker run \
     --name ansible-vault \
-    -it --rm \
+    --rm -it \
     --volume ${ansible_path}:/ansible \
     --volume $(pwd):/home/ansible/project \
     --workspace /home/ansible/project \

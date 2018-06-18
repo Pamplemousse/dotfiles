@@ -22,13 +22,3 @@ alias yamllint="\
     --workspace /app \
     pamplemousse/python \
     yamllint"
-
-alias grip="\
-  docker run \
-    --name grip \
-    --rm -it \
-    --volume $(pwd):/app \
-    --workspace /app \
-    --net=host \
-    pamplemousse/python \
-    grip"

@@ -1,11 +1,12 @@
 # general
-alias edit="vim"
 alias duh="du -h -d 1"
 alias myip="/sbin/ifconfig | grep 'inet ' | awk '{ print $2}'"
 alias myssh="echo -n $(cat "$HOME"/.ssh/id_ed25519.pub) | xclip -selection clipboard"
 
+alias aliasc="vim $HOME/.aliases/*"
+alias aliasesc="vim $HOME/.aliases/*"
 alias sshc="vim $HOME/.ssh/conf.d/*"
-alias gemc="edit $HOME/.gemrc"
+alias gemc="vim $HOME/.gemrc"
 alias vimc="vim $HOME/.vimrc*"
 alias xkbc="vim $HOME/.xkb/keymap/* $HOME/.xkb/symbols/*"
 
@@ -16,7 +17,7 @@ alias internet\?="ping 8.8.8.8"
 # zsh
 alias reload="echo $(pwd) > $HOME/.RELOAD && source $HOME/.zshrc"
 
-alias zshc="edit $HOME/.zshrc"
+alias zshc="vim $HOME/.zshrc"
 alias zsha="vim $HOME/.aliases/*"
 
 
