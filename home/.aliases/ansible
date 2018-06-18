@@ -15,10 +15,10 @@ alias ansible-playbook="\
     -it --rm \
     --volume ${ansible_path}:/ansible \
     --volume $(pwd):/home/ansible/project \
-    -w /home/ansible/project \
     --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
     --volume ${HOME}/.ssh/config:/home/ansible/.ssh/config:ro \
     --volume ${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro \
+    --workspace /home/ansible/project \
     ${ansible_image} \
     ansible-playbook"
 
@@ -28,7 +28,7 @@ alias ansible-galaxy="\
     --rm \
     --volume ${ansible_path}:/ansible \
     --volume $(pwd):/home/ansible/project \
-    -w /home/ansible/project \
+    --workspace /home/ansible/project \
     ${ansible_image} \
     ansible-galaxy"
 
@@ -38,6 +38,6 @@ alias ansible-vault="\
     -it --rm \
     --volume ${ansible_path}:/ansible \
     --volume $(pwd):/home/ansible/project \
-    -w /home/ansible/project \
+    --workspace /home/ansible/project \
     ${ansible_image} \
     ansible-vault"

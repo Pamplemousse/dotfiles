@@ -2,9 +2,9 @@ alias http-server=" \
   docker run \
     --name http-server \
     --rm -it \
-    -p 8080:8080 \
-    -v $(pwd):/data \
-    -w /data \
+    --port 8080:8080 \
+    --volume $(pwd):/data \
+    --workspace /data \
     pamplemousse/nodejs \
     http-server"
 
@@ -12,41 +12,41 @@ alias json-server=" \
   docker run \
     --name json-server \
     --rm -it \
-    -p 3000:3000 \
-    -v $(pwd):/data \
-    -w /data \
+    --port 3000:3000 \
+    --volume $(pwd):/data \
+    --workspace /data \
     pamplemousse/nodejs \
     json-server"
 
 alias node=" \
   docker run \
     --rm -it \
-    -v $(pwd):/data \
-    -w /data \
+    --volume $(pwd):/data \
+    --workspace /data \
     node \
     node"
 
 alias npm=" \
   docker run \
     --rm -it \
-    -v $(pwd):/data \
-    -w /data \
+    --volume $(pwd):/data \
+    --workspace /data \
     node \
     npm"
 
 alias yarn=" \
   docker run \
     --rm -it \
-    -v $(pwd):/data \
-    -w /data \
+    --volume $(pwd):/data \
+    --workspace /data \
     pamplemousse/nodejs \
     yarn"
 
 alias nsp=" \
   docker run \
     --rm -it \
-    -v $(pwd):/data \
-    -w /data \
+    --volume $(pwd):/data \
+    --workspace /data \
     pamplemousse/nodejs \
     nsp"
 
@@ -54,7 +54,7 @@ alias standard=" \
   docker run \
     --name http-server \
     --rm \
-    -v $(pwd):/data \
-    -w /data \
+    --volume $(pwd):/data \
+    --workspace /data \
     pamplemousse/nodejs \
     standard"

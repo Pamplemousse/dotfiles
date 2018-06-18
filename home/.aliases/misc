@@ -22,7 +22,7 @@ alias zsha="vim $HOME/.aliases/*"
 
 # misc
 alias pshtt="docker run --rm -it \
-  -v $(pwd):/data \
+  --volume $(pwd):/data \
   pamplemousse/pshtt"
 
 # Custom search

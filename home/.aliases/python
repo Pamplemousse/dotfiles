@@ -2,8 +2,8 @@ alias python="\
   docker run \
     --name python \
     --rm -it \
-    -v $(pwd):/app \
-    -w /app \
+    --volume $(pwd):/app \
+    --workspace /app \
     pamplemousse/python \
     python"
 
@@ -18,8 +18,8 @@ alias yamllint="\
   docker run \
     --name yamllint \
     --rm -it \
-    -v $(pwd):/app \
-    -w /app \
+    --volume $(pwd):/app \
+    --workspace /app \
     pamplemousse/python \
     yamllint"
 
@@ -27,8 +27,8 @@ alias grip="\
   docker run \
     --name grip \
     --rm -it \
-    -v $(pwd):/app \
-    -w /app \
+    --volume $(pwd):/app \
+    --workspace /app \
     --net=host \
     pamplemousse/python \
     grip"
