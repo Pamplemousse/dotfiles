@@ -26,6 +26,7 @@ alias ansible-galaxy="\
   docker run \
     --name ansible-galaxy \
     --rm \
+    --user $(id -u):$(id -g) \
     --volume ${ansible_path}:/ansible \
     --volume $(pwd):/home/ansible/project \
     --workspace /home/ansible/project \

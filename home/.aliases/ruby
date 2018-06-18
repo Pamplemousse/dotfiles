@@ -10,7 +10,7 @@ alias bundle="\
   docker run \
     --name bundle \
     --rm \
-    --user 1000:1000 \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     ruby \
@@ -22,6 +22,7 @@ alias rspec="\
   docker run \
     --name rspec \
     --rm \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/ruby \
@@ -31,6 +32,7 @@ alias rubocop="\
   docker run \
     --name rubocop \
     --rm \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/ruby \
@@ -40,6 +42,7 @@ alias ruby="\
   docker run \
     --name ruby \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/ruby \
@@ -49,6 +52,7 @@ alias travis="\
   docker run \
     --name travis \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/ruby \

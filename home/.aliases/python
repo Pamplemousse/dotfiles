@@ -2,6 +2,7 @@ alias python="\
   docker run \
     --name python \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/python \
@@ -11,6 +12,7 @@ alias http-prompt="\
   docker run \
     --name http-prompt \
     --rm -it \
+    --user $(id -u):$(id -g) \
     pamplemousse/python \
     http-prompt"
 
@@ -18,6 +20,7 @@ alias yamllint="\
   docker run \
     --name yamllint \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/python \

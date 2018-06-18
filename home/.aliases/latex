@@ -2,6 +2,7 @@ alias pdflatex="\
   docker run \
     --name pdflatex \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/latex \
@@ -11,6 +12,7 @@ alias bibtex="\
   docker run \
     --name bibtex \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
     --workspace /app \
     pamplemousse/latex \

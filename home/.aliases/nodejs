@@ -3,6 +3,7 @@ alias http-server=" \
     --name http-server \
     --rm -it \
     --port 8080:8080 \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workspace /data \
     pamplemousse/nodejs \
@@ -13,6 +14,7 @@ alias json-server=" \
     --name json-server \
     --rm -it \
     --port 3000:3000 \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workspace /data \
     pamplemousse/nodejs \
@@ -21,6 +23,7 @@ alias json-server=" \
 alias node=" \
   docker run \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workspace /data \
     node \
@@ -29,6 +32,7 @@ alias node=" \
 alias npm=" \
   docker run \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workspace /data \
     node \
@@ -37,6 +41,7 @@ alias npm=" \
 alias yarn=" \
   docker run \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workspace /data \
     pamplemousse/nodejs \
@@ -45,6 +50,7 @@ alias yarn=" \
 alias nsp=" \
   docker run \
     --rm -it \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workspace /data \
     pamplemousse/nodejs \
@@ -54,6 +60,7 @@ alias standard=" \
   docker run \
     --name http-server \
     --rm \
+    --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workspace /data \
     pamplemousse/nodejs \
