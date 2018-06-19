@@ -4,6 +4,15 @@
 My personnal dotfiles.
 
 
+## Tests
+
+Nice to guarantee in particular that some aliases will keep working.
+
+```
+./tests/bash_unit tests/test_*.sh
+```
+
+
 ## Usage
 
 ### Installation
