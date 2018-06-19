@@ -1,4 +1,4 @@
-source "$HOME/.aliases/nodejs"
+source "../home/.aliases/nodejs"
 shopt -s expand_aliases
 
 test_http_server() {

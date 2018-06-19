@@ -1,4 +1,4 @@
-source "$HOME/.aliases/python"
+source "../home/.aliases/python"
 shopt -s expand_aliases
 
 test_python() {

@@ -1,0 +1,25 @@
+---
+language: bash
+sudo: required
+dist: trusty
+services: docker
+
+before_install:
+  - docker pull pamplemousse/ansible
+  - docker pull pamplemousse/latex
+  - docker pull pamplemousse/nodejs
+  - docker pull pamplemousse/python
+  - docker pull pamplemousse/ruby
+  - sudo apt-get -qq update
+  - sudo apt-get install -y zsh
+
+install:
+  - mkdir $HOME/Workspace && mkdir $HOME/Workspace/tools
+  - git clone --depth 1 https://github.com/ansible/ansible.git $HOME/Workspace/tools/ansible
+  - cd $HOME/Workspace/tools/ansible && git fetch --tags && git checkout v2.5.0 && cd -
+
+env:
+  - SSH_AUTH_SOCK: /tmp/ssh-whatever/agent.4242
+
+script:
+  - ./tests/bash_unit tests/test_*.sh

@@ -1,4 +1,4 @@
-source "$HOME/.aliases/ruby"
+source "../home/.aliases/ruby"
 shopt -s expand_aliases
 
 test_ruby() {

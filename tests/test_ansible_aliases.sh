@@ -1,4 +1,4 @@
-source "$HOME/.aliases/ansible"
+source "../home/.aliases/ansible"
 shopt -s expand_aliases
 
 test_ansible() {
@@ -6,13 +6,13 @@ test_ansible() {
   assert_equals 0 $?
 }
 
-test_ansible_playbook() {
-  (ansible-playbook --version) > /dev/null 2>&1
+test_ansible_galaxy() {
+  (ansible-galaxy --version) > /dev/null 2>&1
   assert_equals 0 $?
 }
 
 test_ansible_playbook() {
-  (ansible-galaxy --version) > /dev/null 2>&1
+  (ansible-playbook --version) > /dev/null 2>&1
   assert_equals 0 $?
 }
 

@@ -1,4 +1,4 @@
-source "$HOME/.aliases/latex"
+source "../home/.aliases/latex"
 shopt -s expand_aliases
 
 test_pdflatex() {
