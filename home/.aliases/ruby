@@ -18,16 +18,6 @@ alias bundle="\
 
 alias bi="bundle install"
 
-alias rspec="\
-  docker run \
-    --name rspec \
-    --rm \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/ruby \
-    rspec"
-
 alias rubocop="\
   docker run \
     --name rubocop \
