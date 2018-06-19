@@ -2,10 +2,10 @@ alias http-server=" \
   docker run \
     --name http-server \
     --rm -it \
-    --port 8080:8080 \
+    --publish 8080:8080 \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
-    --workspace /data \
+    --workdir /data \
     pamplemousse/nodejs \
     http-server"
 
@@ -13,10 +13,10 @@ alias json-server=" \
   docker run \
     --name json-server \
     --rm -it \
-    --port 3000:3000 \
+    --publish 3000:3000 \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
-    --workspace /data \
+    --workdir /data \
     pamplemousse/nodejs \
     json-server"
 
@@ -25,7 +25,7 @@ alias node=" \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
-    --workspace /data \
+    --workdir /data \
     node \
     node"
 
@@ -34,7 +34,7 @@ alias npm=" \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
-    --workspace /data \
+    --workdir /data \
     node \
     npm"
 
@@ -43,7 +43,7 @@ alias yarn=" \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
-    --workspace /data \
+    --workdir /data \
     pamplemousse/nodejs \
     yarn"
 
@@ -52,7 +52,7 @@ alias nsp=" \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
-    --workspace /data \
+    --workdir /data \
     pamplemousse/nodejs \
     nsp"
 
@@ -62,6 +62,6 @@ alias standard=" \
     --rm \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
-    --workspace /data \
+    --workdir /data \
     pamplemousse/nodejs \
     standard"

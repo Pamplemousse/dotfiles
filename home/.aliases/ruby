@@ -12,7 +12,7 @@ alias bundle="\
     --rm \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     ruby \
     bundle"
 
@@ -24,7 +24,7 @@ alias rspec="\
     --rm \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/ruby \
     rspec"
 
@@ -34,7 +34,7 @@ alias rubocop="\
     --rm \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/ruby \
     rubocop"
 
@@ -44,7 +44,7 @@ alias ruby="\
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/ruby \
     ruby"
 
@@ -54,6 +54,6 @@ alias travis="\
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/ruby \
     travis"

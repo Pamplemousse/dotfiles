@@ -4,7 +4,7 @@ alias python="\
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/python \
     python"
 
@@ -22,6 +22,6 @@ alias yamllint="\
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/python \
     yamllint"

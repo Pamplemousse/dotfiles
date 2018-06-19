@@ -4,7 +4,7 @@ alias pdflatex="\
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/latex \
     pdflatex"
 
@@ -14,6 +14,6 @@ alias bibtex="\
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/app \
-    --workspace /app \
+    --workdir /app \
     pamplemousse/latex \
     bibtex"
