@@ -1,5 +1,6 @@
 # dotfiles
 
+![](https://travis-ci.org/Pamplemousse/dotfiles.svg?branch=master)
 
 My personnal dotfiles.
 
