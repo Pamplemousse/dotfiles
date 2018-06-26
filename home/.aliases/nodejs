@@ -56,6 +56,16 @@ alias nsp=" \
     pamplemousse/nodejs \
     nsp"
 
+alias prettier=" \
+  docker run \
+    --name prettier \
+    --rm \
+    --user $(id -u):$(id -g) \
+    --volume $(pwd):/data \
+    --workdir /data \
+    pamplemousse/nodejs \
+    prettier"
+
 alias standard=" \
   docker run \
     --name http-server \
@@ -65,3 +75,13 @@ alias standard=" \
     --workdir /data \
     pamplemousse/nodejs \
     standard"
+
+alias livedown=" \
+  docker run \
+    --rm -it \
+    --publish 1337:1337 \
+    --user $(id -u):$(id -g) \
+    --volume $(pwd):/data \
+    --workdir /data \
+    pamplemousse/nodejs \
+    livedown"
