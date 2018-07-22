@@ -20,6 +20,16 @@ alias json-server=" \
     pamplemousse/nodejs \
     json-server"
 
+alias livedown=" \
+  docker run \
+    --rm -it \
+    --publish 1337:1337 \
+    --user $(id -u):$(id -g) \
+    --volume $(pwd):/data \
+    --workdir /data \
+    pamplemousse/nodejs \
+    livedown"
+
 alias node=" \
   docker run \
     --rm -it \
@@ -37,15 +47,6 @@ alias npm=" \
     --workdir /data \
     node \
     npm"
-
-alias yarn=" \
-  docker run \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    yarn"
 
 alias nsp=" \
   docker run \
@@ -76,12 +77,11 @@ alias standard=" \
     pamplemousse/nodejs \
     standard"
 
-alias livedown=" \
+alias yarn=" \
   docker run \
     --rm -it \
-    --publish 1337:1337 \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    livedown"
+    yarn"
