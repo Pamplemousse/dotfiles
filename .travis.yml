@@ -18,6 +18,7 @@ install:
   - export TOOLS=$HOME/Workspace/tools
   - mkdir $WORKSPACE && mkdir $TOOLS
   - git clone --depth 1 https://github.com/ansible/ansible.git $TOOLS/ansible
+  - git clone https://github.com/multimediabs/audit-ssh-client-config.git $TOOLS/audit-ssh-client-config
   - cd $TOOLS/ansible && git fetch --tags && git checkout v2.5.0 && cd -
 
 env:
