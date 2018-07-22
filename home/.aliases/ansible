@@ -1,15 +1,16 @@
 ansible_image="pamplemousse/ansible"
 ansible_path="${HOME}/Workspace/tools/ansible"
 
-alias ansible="\
+function ansible () {
   docker run \
     --name ansible \
     --rm \
     --volume ${ansible_path}:/ansible \
     ${ansible_image} \
-    ansible"
+    ansible $@
+}
 
-alias ansible-playbook="\
+function ansible-playbook () {
   docker run \
     --name ansible-playbook \
     --rm -it \
@@ -21,9 +22,10 @@ alias ansible-playbook="\
     --volume ${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro \
     --workdir /home/ansible/project \
     ${ansible_image} \
-    ansible-playbook"
+    ansible-playbook $@
+}
 
-alias ansible-galaxy="\
+function ansible-galaxy () {
   docker run \
     --name ansible-galaxy \
     --rm -it \
@@ -32,9 +34,10 @@ alias ansible-galaxy="\
     --volume $(pwd):/home/ansible/project \
     --workdir /home/ansible/project \
     ${ansible_image} \
-    ansible-galaxy"
+    ansible-galaxy $@
+}
 
-alias ansible-vault="\
+function ansible-vault () {
   docker run \
     --name ansible-vault \
     --rm -it \
@@ -43,4 +46,5 @@ alias ansible-vault="\
     --volume $(pwd):/home/ansible/project \
     --workdir /home/ansible/project \
     ${ansible_image} \
-    ansible-vault"
+    ansible-vault $@
+}

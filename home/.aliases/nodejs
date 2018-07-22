@@ -1,4 +1,4 @@
-alias http-server=" \
+function http-server () {
   docker run \
     --name http-server \
     --rm -it \
@@ -7,9 +7,10 @@ alias http-server=" \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    http-server"
+    http-server $@
+}
 
-alias json-server=" \
+function json-server () {
   docker run \
     --name json-server \
     --rm -it \
@@ -18,9 +19,10 @@ alias json-server=" \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    json-server"
+    json-server $@
+}
 
-alias livedown=" \
+function livedown () {
   docker run \
     --rm -it \
     --publish 1337:1337 \
@@ -28,36 +30,40 @@ alias livedown=" \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    livedown"
+    livedown $@
+}
 
-alias node=" \
+function node () {
   docker run \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workdir /data \
     node \
-    node"
+    node $@
+}
 
-alias npm=" \
+function npm () {
   docker run \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workdir /data \
     node \
-    npm"
+    npm $@
+}
 
-alias nsp=" \
+function nsp () {
   docker run \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    nsp"
+    nsp $@
+}
 
-alias prettier=" \
+function prettier () {
   docker run \
     --name prettier \
     --rm \
@@ -65,9 +71,10 @@ alias prettier=" \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    prettier"
+    prettier $@
+}
 
-alias standard=" \
+function standard () {
   docker run \
     --name http-server \
     --rm \
@@ -75,13 +82,15 @@ alias standard=" \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    standard"
+    standard $@
+}
 
-alias yarn=" \
+function yarn () {
   docker run \
     --rm -it \
     --user $(id -u):$(id -g) \
     --volume $(pwd):/data \
     --workdir /data \
     pamplemousse/nodejs \
-    yarn"
+    yarn $@;
+}

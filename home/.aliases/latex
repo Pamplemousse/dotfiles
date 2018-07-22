@@ -1,4 +1,4 @@
-alias pdflatex="\
+function pdflatex () {
   docker run \
     --name pdflatex \
     --rm -it \
@@ -6,9 +6,10 @@ alias pdflatex="\
     --volume $(pwd):/app \
     --workdir /app \
     pamplemousse/latex \
-    pdflatex"
+    pdflatex $@
+}
 
-alias bibtex="\
+function bibtex () {
   docker run \
     --name bibtex \
     --rm -it \
@@ -16,4 +17,5 @@ alias bibtex="\
     --volume $(pwd):/app \
     --workdir /app \
     pamplemousse/latex \
-    bibtex"
+    bibtex $@
+}

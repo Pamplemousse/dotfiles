@@ -6,7 +6,7 @@ alias rdbtp="rake db:test:prepare"
 alias rdbs="rake db:seed"
 alias dbreset="rdbd && rdbc && rdbm && rdbtp"
 
-alias bundle="\
+function bundle () {
   docker run \
     --name bundle \
     --rm \
@@ -14,11 +14,12 @@ alias bundle="\
     --volume $(pwd):/app \
     --workdir /app \
     ruby \
-    bundle"
+    bundle $@
+}
 
 alias bi="bundle install"
 
-alias rubocop="\
+function rubocop () {
   docker run \
     --name rubocop \
     --rm \
@@ -26,9 +27,10 @@ alias rubocop="\
     --volume $(pwd):/app \
     --workdir /app \
     pamplemousse/ruby \
-    rubocop"
+    rubocop $@
+}
 
-alias ruby="\
+function ruby () {
   docker run \
     --name ruby \
     --rm -it \
@@ -36,9 +38,10 @@ alias ruby="\
     --volume $(pwd):/app \
     --workdir /app \
     pamplemousse/ruby \
-    ruby"
+    ruby $@
+}
 
-alias travis="\
+function travis () {
   docker run \
     --name travis \
     --rm -it \
@@ -46,4 +49,5 @@ alias travis="\
     --volume $(pwd):/app \
     --workdir /app \
     pamplemousse/ruby \
-    travis"
+    travis $@
+}

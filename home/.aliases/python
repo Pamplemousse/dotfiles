@@ -1,4 +1,4 @@
-alias python="\
+function python () {
   docker run \
     --name python \
     --rm -it \
@@ -6,17 +6,19 @@ alias python="\
     --volume $(pwd):/app \
     --workdir /app \
     pamplemousse/python \
-    python"
+    python $@
+}
 
-alias http-prompt="\
+function http-prompt () {
   docker run \
     --name http-prompt \
     --rm -it \
     --user $(id -u):$(id -g) \
     pamplemousse/python \
-    http-prompt"
+    http-prompt $@
+}
 
-alias yamllint="\
+function yamllint () {
   docker run \
     --name yamllint \
     --rm -it \
@@ -24,4 +26,5 @@ alias yamllint="\
     --volume $(pwd):/app \
     --workdir /app \
     pamplemousse/python \
-    yamllint"
+    yamllint $@
+}
