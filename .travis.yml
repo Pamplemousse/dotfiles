@@ -14,9 +14,11 @@ before_install:
   - sudo apt-get install -y zsh
 
 install:
-  - mkdir $HOME/Workspace && mkdir $HOME/Workspace/tools
-  - git clone --depth 1 https://github.com/ansible/ansible.git $HOME/Workspace/tools/ansible
-  - cd $HOME/Workspace/tools/ansible && git fetch --tags && git checkout v2.5.0 && cd -
+  - export WORKSPACE=$HOME/Workspace
+  - export TOOLS=$HOME/Workspace/tools
+  - mkdir $WORKSPACE && mkdir $TOOLS
+  - git clone --depth 1 https://github.com/ansible/ansible.git $TOOLS/ansible
+  - cd $TOOLS/ansible && git fetch --tags && git checkout v2.5.0 && cd -
 
 env:
   - SSH_AUTH_SOCK: /tmp/ssh-whatever/agent.4242
