@@ -5,21 +5,20 @@ alias myssh="echo -n $(cat "$HOME"/.ssh/id_ed25519.pub) | xclip -selection clipb
 
 alias aliasc="vim $HOME/.aliases/*"
 alias aliasesc="vim $HOME/.aliases/*"
-alias sshc="vim $HOME/.ssh/conf.d/*"
 alias gemc="vim $HOME/.gemrc"
+alias ircc="vim $HOME/.irssi/config"
+alias sshc="vim $HOME/.ssh/conf.d/*"
 alias vimc="vim $HOME/.vimrc*"
 alias xkbc="vim $HOME/.xkb/keymap/* $HOME/.xkb/symbols/*"
 
 alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar $HOME/Workspace/tools/burp.jar"
 alias internet\?="ping 8.8.8.8"
 
-
 # zsh
 alias reload="echo $(pwd) > $HOME/.RELOAD && source $HOME/.zshrc"
 
 alias zshc="vim $HOME/.zshrc"
 alias zsha="vim $HOME/.aliases/*"
-
 
 # misc
 alias pshtt="docker run --rm -it \
