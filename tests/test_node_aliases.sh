@@ -6,6 +6,11 @@ test_http_server() {
   assert_equals 0 $?
 }
 
+test_jsdoc() {
+  (jsdoc --version) > /dev/null 2>&1
+  assert_equals 0 $?
+}
+
 test_json_server() {
   (json-server --version) > /dev/null 2>&1
   assert_equals 0 $?

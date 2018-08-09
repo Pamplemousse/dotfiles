@@ -10,6 +10,17 @@ function http-server () {
     http-server $@
 }
 
+function jsdoc () {
+  docker run \
+    --name jsdoc \
+    --rm -it \
+    --user $(id -u):$(id -g) \
+    --volume $(pwd):/data \
+    --workdir /data \
+    pamplemousse/nodejs \
+    jsdoc $@
+}
+
 function json-server () {
   docker run \
     --name json-server \
