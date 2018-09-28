@@ -64,16 +64,6 @@ function npm () {
     npm $@
 }
 
-function nsp () {
-  docker run \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    nsp $@
-}
-
 function prettier () {
   docker run \
     --name prettier \

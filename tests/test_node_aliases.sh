@@ -31,11 +31,6 @@ test_npm() {
   assert_equals 0 $?
 }
 
-test_nsp() {
-  (nsp --version) > /dev/null 2>&1
-  assert_equals 0 $?
-}
-
 test_prettier() {
   (prettier --version) > /dev/null 2>&1
   assert_equals 0 $?
