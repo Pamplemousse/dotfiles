@@ -41,11 +41,6 @@ homeshick --quiet refresh
 
 source $ZSH/oh-my-zsh.sh
 
-# LOAD ALL ALIASES
-for alias_file in $(ls ~/.aliases/); do
-  source ~/.aliases/"$alias_file"
-done
-
 export PATH=".bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
