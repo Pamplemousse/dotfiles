@@ -1,2 +1,4 @@
 map s scroll up
 map t scroll down
+
+set selection-clipboard clipboard
