@@ -14,6 +14,8 @@ alias xkbc="vim $HOME/.xkb/keymap/* $HOME/.xkb/symbols/*"
 alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar $HOME/Workspace/tools/burp.jar"
 alias internet\?="ping 8.8.8.8"
 
+alias zathurac="vim $HOME/.config/zathura/zathurarc"
+
 # zsh
 alias reload="echo $(pwd) > $HOME/.RELOAD && source $HOME/.zshrc"
 
