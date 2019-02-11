@@ -1,14 +1,3 @@
-function pdflatex () {
-  docker run \
-    --name pdflatex \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/latex \
-    pdflatex $@
-}
-
 function bibtex () {
   docker run \
     --name bibtex \
@@ -18,4 +7,26 @@ function bibtex () {
     --workdir /app \
     pamplemousse/latex \
     bibtex $@
+}
+
+function latexmk () {
+  docker run \
+    --name latexmk \
+    --rm -it \
+    --user $(id -u):$(id -g) \
+    --volume $(pwd):/app \
+    --workdir /app \
+    pamplemousse/latex \
+    latexmk $@
+}
+
+function pdflatex () {
+  docker run \
+    --name pdflatex \
+    --rm -it \
+    --user $(id -u):$(id -g) \
+    --volume $(pwd):/app \
+    --workdir /app \
+    pamplemousse/latex \
+    pdflatex $@
 }
