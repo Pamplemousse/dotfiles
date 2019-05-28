@@ -15,11 +15,13 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'digitaltoad/vim-pug'
 Bundle 'ElmCast/elm-vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'LnL7/vim-nix'
 
 " Visual
 Bundle 'mhartington/oceanic-next'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
+Bundle 'ryanoasis/vim-devicons'
 
 " Editing
 Bundle 'mattn/emmet-vim'
