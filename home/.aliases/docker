@@ -3,6 +3,7 @@ alias dlg="docker logs"
 alias dps="docker ps -a"
 alias drm="docker rm"
 alias drmi="docker rmi"
+alias drmi_all_unused="docker images | grep '<none>' | awk '/ +/ {print $3}' | xargs docker rmi"
 alias dstop="docker stop"
 
 # networks
