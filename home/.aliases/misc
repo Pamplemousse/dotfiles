@@ -11,6 +11,12 @@ alias sshc="vim $HOME/.ssh/conf.d/*"
 alias vimc="vim $HOME/.vimrc*"
 alias xkbc="vim $HOME/.xkb/keymap/* $HOME/.xkb/symbols/*"
 
+command -v lsd >/dev/null 2>&1 && {
+  alias l="lsd -alh"
+  alias ll="lsd -lh"
+  alias lt="lsd --tree"
+}
+
 alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar $HOME/Workspace/tools/burp.jar"
 alias internet\?="ping 8.8.8.8"
 alias ip\?="ip address show up"

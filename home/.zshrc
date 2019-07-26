@@ -85,3 +85,6 @@ unset -f work_in_progress
 # Useful for keybase on nixos
 # https://github.com/NixOS/nixpkgs/issues/31261
 export NIX_SKIP_KEYBASE_CHECKS=1
+
+# oh-my-zsh overrides some useful aliases...
+source "${HOME}/.zshenv"
