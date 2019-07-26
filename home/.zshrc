@@ -22,7 +22,7 @@ setopt always_to_end
 export EMAIL="xav.maso@gmail.com"
 export FULLNAME="Xavier Maso"
 
-plugins=(git python bundler rails ruby tmux nvm grunt docker ssh-agent)
+plugins=(git python bundler rails ruby tmux docker ssh-agent)
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
