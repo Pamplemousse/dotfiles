@@ -85,7 +85,10 @@ syntax enable
 set t_Co=256
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+
+if !empty(glob('~/.vim/plugged/oceanic-next'))
+  colorscheme OceanicNext
+endif
 
 hi CursorLine cterm=NONE
 
