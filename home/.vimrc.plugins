@@ -1,37 +1,40 @@
-" Manage plugins with Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Manage plugins with vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Set of default options
-Bundle 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
 " Syntax highlight
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'godlygeek/tabular'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'digitaltoad/vim-pug'
-Bundle 'ElmCast/elm-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'LnL7/vim-nix'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'digitaltoad/vim-pug'
+Plug 'ElmCast/elm-vim'
+Plug 'scrooloose/syntastic'
+Plug 'LnL7/vim-nix'
 
 " Visual
-Bundle 'mhartington/oceanic-next'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bling/vim-airline'
-Bundle 'ryanoasis/vim-devicons'
+Plug 'mhartington/oceanic-next'
+Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
+Plug 'ryanoasis/vim-devicons'
 
 " Editing
-Bundle 'mattn/emmet-vim'
-Bundle 'ervandew/supertab'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'tpope/vim-endwise'
-Bundle 'bkad/CamelCaseMotion'
-Bundle 'vim-scripts/tComment'
+Plug 'mattn/emmet-vim'
+Plug 'ervandew/supertab'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'tpope/vim-endwise'
+Plug 'bkad/CamelCaseMotion'
+Plug 'vim-scripts/tComment'
 
 " Navigation
-Bundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
-call vundle#end()
+call plug#end()
