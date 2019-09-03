@@ -21,6 +21,8 @@ alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar $HO
 alias internet\?="ping 8.8.8.8"
 alias ip\?="ip address show up"
 
+alias weather\?="curl 'wttr.in?m'"
+
 alias zathurac="vim $HOME/.config/zathura/zathurarc"
 
 # zsh
