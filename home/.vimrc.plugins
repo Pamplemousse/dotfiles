@@ -11,30 +11,27 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 " Syntax highlight
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'digitaltoad/vim-pug'
 Plug 'ElmCast/elm-vim'
 Plug 'scrooloose/syntastic'
+Plug 'plasticboy/vim-markdown'
 Plug 'LnL7/vim-nix'
+Plug 'digitaltoad/vim-pug'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 
-" Visual
+" Interface
 Plug 'mhartington/oceanic-next'
-Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'ryanoasis/vim-devicons'
+Plug 'airblade/vim-gitgutter'
 
 " Editing
-Plug 'mattn/emmet-vim'
-Plug 'ervandew/supertab'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'tpope/vim-endwise'
 Plug 'bkad/CamelCaseMotion'
-Plug 'vim-scripts/tComment'
-
-" Navigation
 Plug 'kien/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'vim-scripts/tComment'
+Plug 'tpope/vim-endwise'
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
