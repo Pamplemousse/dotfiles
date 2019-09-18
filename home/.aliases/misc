@@ -17,7 +17,6 @@ command -v lsd >/dev/null 2>&1 && {
   alias lt="lsd --tree"
 }
 
-alias burp="java -Djava.awt.headless=false -Xmx1024m -XX:MaxPermSize=1G -jar $HOME/Workspace/tools/burp.jar"
 alias internet\?="ping 8.8.8.8"
 alias ip\?="ip address show up"
 
