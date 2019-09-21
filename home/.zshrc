@@ -88,3 +88,7 @@ export NIX_SKIP_KEYBASE_CHECKS=1
 
 # oh-my-zsh overrides some useful aliases...
 source "${HOME}/.zshenv"
+
+# add local nixpkgs
+HOME_NIX_PATH="/home/pamplemousse/Workspace/tools/nixpkgs/"
+[ -d "${HOME_NIX_PATH}" ] && NIX_PATH="nixpkgs=${HOME_NIX_PATH}:${NIX_PATH}"
