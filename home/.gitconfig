@@ -15,7 +15,7 @@
   default = current
 
 [core]
-  editor = vi
+  editor = nvim
   excludesfile = ~/.gitignore
   whitespace = space-before-tab,cr-at-eol
 
