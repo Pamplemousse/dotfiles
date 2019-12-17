@@ -25,4 +25,4 @@ data.location=~/.task
 #include /usr/share/taskwarrior/dark-yellow-green.theme
 #include /usr/share/taskwarrior/dark-gray-256.theme
 
-editor=vim
+editor=nvim

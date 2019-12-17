@@ -3,7 +3,7 @@ alias gsl="git stash list"
 alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
-alias gitc="edit $HOME/.gitconfig"
+alias gitc="$EDITOR $HOME/.gitconfig"
 
 function gpl () {
   git pull origin $(git rev-parse --abbrev-ref HEAD)
