@@ -1,5 +1,6 @@
 alias gst="git status -s"
 alias gsl="git stash list"
+alias gc="git commit -v --signoff"
 alias gd="git diff --ignore-space-at-eol -b -w --ignore-blank-lines"
 alias gds="git diff --staged"
 alias gap="git add -p"
