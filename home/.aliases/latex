@@ -1,32 +1,14 @@
-function bibtex () {
-  docker run \
-    --name bibtex \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/latex \
-    bibtex $@
-}
-
-function latexmk () {
-  docker run \
-    --name latexmk \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/latex \
-    latexmk $@
-}
-
-function pdflatex () {
-  docker run \
-    --name pdflatex \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/latex \
-    pdflatex $@
-}
+for COMMAND (bibtex latexmk pdflatex); do
+  if ! command -v $COMMAND 2>&1 >/dev/null; then
+    function $COMMAND () {
+      docker run \
+        --name $0 \
+        --rm -it \
+        --user $(id -u):$(id -g) \
+        --volume $(pwd):/app \
+        --workdir /app \
+        pamplemousse/latex \
+        $0 $@
+    }
+  fi
+done

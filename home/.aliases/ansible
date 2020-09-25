@@ -1,50 +1,46 @@
 ansible_image="pamplemousse/ansible"
 ansible_path="${HOME}/Workspace/tools/ansible"
 
-function ansible () {
-  docker run \
-    --name ansible \
-    --rm \
-    --volume ${ansible_path}:/ansible \
-    ${ansible_image} \
-    ansible $@
-}
+if ! command -v ansible 2>&1 >/dev/null; then
+  function ansible () {
+    docker run \
+      --name ansible \
+      --rm \
+      --volume ${ansible_path}:/ansible \
+      ${ansible_image} \
+      ansible $@
+  }
+fi
 
-function ansible-playbook () {
-  docker run \
-    --name ansible-playbook \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume ${ansible_path}:/ansible \
-    --volume $(pwd):/home/ansible/project \
-    --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
-    --volume ${HOME}/.ssh/config:/home/ansible/.ssh/config:ro \
-    --volume ${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro \
-    --workdir /home/ansible/project \
-    ${ansible_image} \
-    ansible-playbook $@
-}
+if ! command -v ansible-playbook 2>&1 >/dev/null; then
+  function ansible-playbook () {
+    docker run \
+      --name ansible-playbook \
+      --rm -it \
+      --user $(id -u):$(id -g) \
+      --volume ${ansible_path}:/ansible \
+      --volume $(pwd):/home/ansible/project \
+      --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
+      --volume ${HOME}/.ssh/config:/home/ansible/.ssh/config:ro \
+      --volume ${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro \
+      --workdir /home/ansible/project \
+      ${ansible_image} \
+      ansible-playbook $@
+  }
+fi
 
-function ansible-galaxy () {
-  docker run \
-    --name ansible-galaxy \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume ${ansible_path}:/ansible \
-    --volume $(pwd):/home/ansible/project \
-    --workdir /home/ansible/project \
-    ${ansible_image} \
-    ansible-galaxy $@
-}
-
-function ansible-vault () {
-  docker run \
-    --name ansible-vault \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume ${ansible_path}:/ansible \
-    --volume $(pwd):/home/ansible/project \
-    --workdir /home/ansible/project \
-    ${ansible_image} \
-    ansible-vault $@
-}
+for COMMAND (ansible-galaxy ansible-vault); do
+  if ! command -v ansible-vault 2>&1 >/dev/null; then
+    function $COMMAND () {
+      docker run \
+        --name $0 \
+        --rm -it \
+        --user $(id -u):$(id -g) \
+        --volume ${ansible_path}:/ansible \
+        --volume $(pwd):/home/ansible/project \
+        --workdir /home/ansible/project \
+        ${ansible_image} \
+        $0 $@
+    }
+  fi
+done
