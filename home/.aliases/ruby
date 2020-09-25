@@ -6,48 +6,56 @@ alias rdbtp="rake db:test:prepare"
 alias rdbs="rake db:seed"
 alias dbreset="rdbd && rdbc && rdbm && rdbtp"
 
-function bundle () {
-  docker run \
-    --name bundle \
-    --rm \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    ruby \
-    bundle $@
-}
+if ! command -v bundle 2>&1 >/dev/null; then
+  function bundle () {
+    docker run \
+      --name bundle \
+      --rm \
+      --user $(id -u):$(id -g) \
+      --volume $(pwd):/app \
+      --workdir /app \
+      ruby \
+      bundle $@
+  }
+fi
 
 alias bi="bundle install"
 
-function rubocop () {
-  docker run \
-    --name rubocop \
-    --rm \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/ruby \
-    rubocop $@
-}
+if ! command -v rubocop 2>&1 >/dev/null; then
+  function rubocop () {
+    docker run \
+      --name rubocop \
+      --rm \
+      --user $(id -u):$(id -g) \
+      --volume $(pwd):/app \
+      --workdir /app \
+      pamplemousse/ruby \
+      rubocop $@
+  }
+fi
 
-function ruby () {
-  docker run \
-    --name ruby \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/ruby \
-    ruby $@
-}
+if ! command -v ruby 2>&1 >/dev/null; then
+  function ruby () {
+    docker run \
+      --name ruby \
+      --rm -it \
+      --user $(id -u):$(id -g) \
+      --volume $(pwd):/app \
+      --workdir /app \
+      pamplemousse/ruby \
+      ruby $@
+  }
+fi
 
-function travis () {
-  docker run \
-    --name travis \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/app \
-    --workdir /app \
-    pamplemousse/ruby \
-    travis $@
-}
+if ! command -v travis 2>&1 >/dev/null; then
+  function travis () {
+    docker run \
+      --name travis \
+      --rm -it \
+      --user $(id -u):$(id -g) \
+      --volume $(pwd):/app \
+      --workdir /app \
+      pamplemousse/ruby \
+      travis $@
+  }
+fi

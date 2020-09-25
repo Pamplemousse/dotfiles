@@ -1,97 +1,61 @@
-function http-server () {
-  docker run \
-    --name http-server \
-    --rm -it \
-    --publish 8080:8080 \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    http-server $@
-}
+# These commands use the `pamplemousse/nodejs` image and expose a port.
+typeset -A commands_and_ports
+commands_and_ports=(
+  http-server 8080
+  json-server 3000
+  livedown 1337
+)
 
-function jsdoc () {
-  docker run \
-    --name jsdoc \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    jsdoc $@
-}
+for COMMAND PORT in ${(kv)commands_and_ports}; do
+  if ! command -v $COMMAND 2>&1 >/dev/null; then
+    function "${COMMAND}_with_port" () {
+      COMMAND=$1
+      PORT=$2
 
-function json-server () {
-  docker run \
-    --name json-server \
-    --rm -it \
-    --publish 3000:3000 \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    json-server $@
-}
+      # `${array[@]:n}` slice `array`, taking all elements from element `n` to the last one.
+      docker run \
+        --name $COMMAND \
+        --rm -it \
+        --publish $PORT:$PORT \
+        --user $(id -u):$(id -g) \
+        --volume $(pwd):/data \
+        --workdir /data \
+        pamplemousse/nodejs \
+        $COMMAND ${@[@]:3}
+    }
 
-function livedown () {
-  docker run \
-    --rm -it \
-    --publish 1337:1337 \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    livedown $@
-}
+    # Currying!
+    alias $COMMAND="${COMMAND}_with_port $COMMAND $PORT"
+  fi
+done
 
-function node () {
-  docker run \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    node \
-    node $@
-}
+# These commands use the `pamplemousse/nodejs` image without exposing ports.
+for COMMAND (jsdoc prettier standard yarn); do
+  if ! command -v $COMMAND 2>&1 >/dev/null; then
+    function $COMMAND () {
+      docker run \
+        --name $0 \
+        --rm \
+        --user $(id -u):$(id -g) \
+        --volume $(pwd):/data \
+        --workdir /data \
+        pamplemousse/nodejs \
+        $0 $@
+    }
+  fi
+done
 
-function npm () {
-  docker run \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    node \
-    npm $@
-}
-
-function prettier () {
-  docker run \
-    --name prettier \
-    --rm \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    prettier $@
-}
-
-function standard () {
-  docker run \
-    --name http-server \
-    --rm \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    standard $@
-}
-
-function yarn () {
-  docker run \
-    --rm -it \
-    --user $(id -u):$(id -g) \
-    --volume $(pwd):/data \
-    --workdir /data \
-    pamplemousse/nodejs \
-    yarn $@;
-}
+# These commands use the official `node` image without exposing ports.
+for COMMAND (node npm); do
+  if ! command -v $COMMAND 2>&1 >/dev/null; then
+    function $COMMAND () {
+      docker run \
+        --rm -it \
+        --user $(id -u):$(id -g) \
+        --volume $(pwd):/data \
+        --workdir /data \
+        node \
+        $0 $@
+    }
+  fi
+done
