@@ -10,7 +10,7 @@ My personnal dotfiles.
 Nice to guarantee in particular that some aliases will keep working.
 
 ```
-./tests/bash_unit tests/test_*.sh
+shellspec --shell zsh
 ```
 
 

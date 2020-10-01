@@ -1,5 +1,8 @@
 ---
-language: bash
+addons:
+  apt:
+    packages:
+    - zsh
 sudo: required
 dist: trusty
 services: docker
@@ -10,19 +13,18 @@ before_install:
   - docker pull pamplemousse/nodejs
   - docker pull pamplemousse/python
   - docker pull pamplemousse/ruby
-  - sudo apt-get -qq update
-  - sudo apt-get install -y zsh
 
 install:
   - export WORKSPACE=$HOME/Workspace
   - export TOOLS=$HOME/Workspace/tools
   - mkdir $WORKSPACE && mkdir $TOOLS
+  - git clone --depth 1 https://github.com/ko1nksm/shellspec.git
   - git clone --depth 1 https://github.com/ansible/ansible.git $TOOLS/ansible
-  - git clone https://github.com/multimediabs/audit-ssh-client-config.git $TOOLS/audit-ssh-client-config
   - cd $TOOLS/ansible && git fetch --tags && git checkout v2.5.0 && cd -
+  - git clone https://github.com/multimediabs/audit-ssh-client-config.git $TOOLS/audit-ssh-client-config
 
 env:
   - SSH_AUTH_SOCK: /tmp/ssh-whatever/agent.4242
 
 script:
-  - ./tests/bash_unit tests/test_*.sh
+  - shellspec/shellspec --shell zsh
