@@ -1,9 +1,0 @@
-! Swap 'w' and 'è'
-keycode 28 =  w W VoidSymbol VoidSymbol VoidSymbol
-keycode 35 = egrave Egrave VoidSymbol VoidSymbol VoidSymbol
-
-! Put < prior to «
-keycode 11 = less 2 VoidSymbol VoidSymbol guillemotleft
-
-! Put > prior to »
-keycode 12 = greater 3 VoidSymbol VoidSymbol guillemotright
