@@ -12,12 +12,19 @@ Plug 'tpope/vim-sensible'
 
 " Syntax highlight
 Plug 'ElmCast/elm-vim'
-Plug 'scrooloose/syntastic'
 Plug 'plasticboy/vim-markdown'
 Plug 'LnL7/vim-nix'
 Plug 'digitaltoad/vim-pug'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-html'
+Plug 'neoclide/coc-json'
+Plug 'fannheyward/coc-markdownlint'
+Plug 'neoclide/coc-python'
+Plug 'neoclide/coc-rls' " Rust
+Plug 'neoclide/coc-solargraph' " Ruby
 
 " Interface
 Plug 'mhartington/oceanic-next'
