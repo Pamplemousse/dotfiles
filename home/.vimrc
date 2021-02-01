@@ -105,19 +105,6 @@ let g:ctrlp_user_command = {
 \ 'fallback': 'find %s -type f'
 \ }
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:elm_syntastic_show_warnings = 1
-
-let g:syntastic_javascript_checkers = ['standard']
 
 " Vim-markdown
 let g:vim_markdown_toc_autofit = 1
