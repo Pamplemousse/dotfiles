@@ -22,7 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-html'
 Plug 'neoclide/coc-json'
 Plug 'fannheyward/coc-markdownlint'
-Plug 'neoclide/coc-python'
+Plug 'fannheyward/coc-pyright'
 Plug 'neoclide/coc-rls' " Rust
 Plug 'neoclide/coc-solargraph' " Ruby
 
