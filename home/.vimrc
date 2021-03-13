@@ -116,6 +116,9 @@ let g:ctrlp_user_command = {
 \ 'fallback': 'find %s -type f'
 \ }
 
+" GitGutter
+nmap gs <Plug>GitGutterPrevHunk
+nmap gt <Plug>GitGutterNextHunk
 
 " Vim-markdown
 let g:vim_markdown_toc_autofit = 1
