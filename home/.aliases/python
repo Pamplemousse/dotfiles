@@ -3,11 +3,11 @@ if ! command -v python 2>&1 >/dev/null; then
     docker run \
       --name python \
       --rm -it \
-      --user $(id -u):$(id -g) \
-      --volume $(pwd):/app \
+      --user "$(id -u):$(id -g)" \
+      --volume "$(pwd):/app" \
       --workdir /app \
       pamplemousse/python \
-      python $@
+      python "$@"
   }
 fi
 
@@ -16,9 +16,9 @@ if ! command -v http-prompt 2>&1 >/dev/null; then
     docker run \
       --name http-prompt \
       --rm -it \
-      --user $(id -u):$(id -g) \
+      --user "$(id -u):$(id -g)" \
       pamplemousse/python \
-      http-prompt $@
+      http-prompt "$@"
   }
 fi
 
@@ -27,10 +27,10 @@ if ! command -v yamllint 2>&1 >/dev/null; then
     docker run \
       --name yamllint \
       --rm -it \
-      --user $(id -u):$(id -g) \
-      --volume $(pwd):/app \
+      --user "$(id -u):$(id -g)" \
+      --volume "$(pwd):/app" \
       --workdir /app \
       pamplemousse/python \
-      yamllint $@
+      yamllint "$@"
   }
 fi

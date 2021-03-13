@@ -1,14 +1,14 @@
 for COMMAND (bibtex latexmk pdflatex); do
-  if ! command -v $COMMAND 2>&1 >/dev/null; then
-    function $COMMAND () {
+  if ! command -v "$COMMAND" 2>&1 >/dev/null; then
+    function "$COMMAND" () {
       docker run \
-        --name $0 \
+        --name "$0" \
         --rm -it \
-        --user $(id -u):$(id -g) \
-        --volume $(pwd):/app \
+        --user "$(id -u):$(id -g)" \
+        --volume "$(pwd):/app" \
         --workdir /app \
         pamplemousse/latex \
-        $0 $@
+        "$0" "$@"
     }
   fi
 done
