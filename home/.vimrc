@@ -66,11 +66,22 @@ augroup writing
   au BufRead,BufNewFile *.md,*.bib,*.tex,*.txt set spellsuggest=best,5
 augroup END
 
+" Syntax coloring
+augroup gdb
+  autocmd!
+  au BufRead,BufNewFile *.gdb,*.rr setf gdb
+augroup END
+
 augroup sage
   autocmd!
   au BufRead,BufNewFile *.sage set syntax=python
   au BufRead,BufNewFile *.sage set shiftwidth=4
   au BufRead,BufNewFile *.sage setf python
+augroup END
+
+augroup zest
+  autocmd!
+  au BufRead,BufNewFile *.zst set syntax=json
 augroup END
 
 let g:is_posix = 1                          " Better highlighting of shell files
