@@ -21,7 +21,7 @@ install:
   - git clone --depth 1 https://github.com/ko1nksm/shellspec.git
   - git clone --depth 1 https://github.com/ansible/ansible.git $TOOLS/ansible
   - cd $TOOLS/ansible && git fetch --tags && git checkout v2.5.0 && cd -
-  - git clone https://github.com/multimediabs/audit-ssh-client-config.git $TOOLS/audit-ssh-client-config
+  - git clone https://github.com/Pamplemousse/audit-ssh-client-config.git $TOOLS/audit-ssh-client-config
 
 env:
   - SSH_AUTH_SOCK: /tmp/ssh-whatever/agent.4242
