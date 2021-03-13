@@ -11,7 +11,11 @@ alias sshc="$EDITOR $HOME/.ssh/conf.d/*"
 alias nvimc="$EDITOR $HOME/.vimrc*"
 alias xkbc="$EDITOR $HOME/.xkb/keymap/* $HOME/.xkb/symbols/*"
 
+alias cat="bat"
+
 alias vi="nvim"
+
+alias :q=exit
 
 command -v lsd >/dev/null 2>&1 && {
   alias l="lsd -alh"
@@ -31,11 +35,6 @@ alias reload="echo $(pwd) > $HOME/.RELOAD && source $HOME/.zshrc"
 
 alias zshc="$EDITOR $HOME/.zshrc"
 alias zsha="$EDITOR $HOME/.aliases/*"
-
-# misc
-alias pshtt="docker run --rm -it \
-  --volume $(pwd):/data \
-  pamplemousse/pshtt"
 
 # Custom search
 search () {
