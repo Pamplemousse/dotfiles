@@ -7,21 +7,21 @@ commands_and_ports=(
 )
 
 for COMMAND PORT in ${(kv)commands_and_ports}; do
-  if ! command -v $COMMAND 2>&1 >/dev/null; then
+  if ! command -v "$COMMAND" 2>&1 >/dev/null; then
     function "${COMMAND}_with_port" () {
-      COMMAND=$1
-      PORT=$2
+      COMMAND="$1"
+      PORT="$2"
 
       # `${array[@]:n}` slice `array`, taking all elements from element `n` to the last one.
       docker run \
-        --name $COMMAND \
+        --name "$COMMAND" \
         --rm -it \
-        --publish $PORT:$PORT \
-        --user $(id -u):$(id -g) \
-        --volume $(pwd):/data \
+        --publish "$PORT:$PORT" \
+        --user "$(id -u):$(id -g)" \
+        --volume "$(pwd):/data" \
         --workdir /data \
         pamplemousse/nodejs \
-        $COMMAND ${@[@]:3}
+        "$COMMAND" "${@[@]:3}"
     }
 
     # Currying!
@@ -31,31 +31,31 @@ done
 
 # These commands use the `pamplemousse/nodejs` image without exposing ports.
 for COMMAND (jsdoc prettier standard yarn); do
-  if ! command -v $COMMAND 2>&1 >/dev/null; then
-    function $COMMAND () {
+  if ! command -v "$COMMAND" 2>&1 >/dev/null; then
+    function "$COMMAND" () {
       docker run \
-        --name $0 \
+        --name "$0" \
         --rm \
-        --user $(id -u):$(id -g) \
-        --volume $(pwd):/data \
+        --user "$(id -u):$(id -g)" \
+        --volume "$(pwd):/data" \
         --workdir /data \
         pamplemousse/nodejs \
-        $0 $@
+        "$0" "$@"
     }
   fi
 done
 
 # These commands use the official `node` image without exposing ports.
 for COMMAND (node npm); do
-  if ! command -v $COMMAND 2>&1 >/dev/null; then
-    function $COMMAND () {
+  if ! command -v "$COMMAND" 2>&1 >/dev/null; then
+    function "$COMMAND" () {
       docker run \
         --rm -it \
-        --user $(id -u):$(id -g) \
-        --volume $(pwd):/data \
+        --user "$(id -u):$(id -g)" \
+        --volume "$(pwd):/data" \
         --workdir /data \
         node \
-        $0 $@
+        "$0" "$@"
     }
   fi
 done

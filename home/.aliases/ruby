@@ -11,11 +11,11 @@ if ! command -v bundle 2>&1 >/dev/null; then
     docker run \
       --name bundle \
       --rm \
-      --user $(id -u):$(id -g) \
-      --volume $(pwd):/app \
+      --user "$(id -u):$(id -g)" \
+      --volume "$(pwd):/app" \
       --workdir /app \
       ruby \
-      bundle $@
+      bundle "$@"
   }
 fi
 
@@ -26,11 +26,11 @@ if ! command -v rubocop 2>&1 >/dev/null; then
     docker run \
       --name rubocop \
       --rm \
-      --user $(id -u):$(id -g) \
-      --volume $(pwd):/app \
+      --user "$(id -u):$(id -g)" \
+      --volume "$(pwd):/app" \
       --workdir /app \
       pamplemousse/ruby \
-      rubocop $@
+      rubocop "$@"
   }
 fi
 
@@ -39,11 +39,11 @@ if ! command -v ruby 2>&1 >/dev/null; then
     docker run \
       --name ruby \
       --rm -it \
-      --user $(id -u):$(id -g) \
-      --volume $(pwd):/app \
+      --user "$(id -u):$(id -g)" \
+      --volume "$(pwd):/app" \
       --workdir /app \
       pamplemousse/ruby \
-      ruby $@
+      ruby "$@"
   }
 fi
 
@@ -52,10 +52,10 @@ if ! command -v travis 2>&1 >/dev/null; then
     docker run \
       --name travis \
       --rm -it \
-      --user $(id -u):$(id -g) \
-      --volume $(pwd):/app \
+      --user "$(id -u):$(id -g)" \
+      --volume "$(pwd):/app" \
       --workdir /app \
       pamplemousse/ruby \
-      travis $@
+      travis "$@"
   }
 fi
