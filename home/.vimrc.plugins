@@ -35,10 +35,10 @@ Plug 'airblade/vim-gitgutter'
 " Editing
 Plug 'bkad/CamelCaseMotion'
 Plug 'kien/ctrlp.vim'
-Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
+Plug 'ervandew/supertab' " Completion using <Tab>
+Plug 'godlygeek/tabular' " Facilitate the formatting of tables
 Plug 'vim-scripts/tComment'
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise' " Automatically add `end` in Ruby
 Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
