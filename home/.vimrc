@@ -40,9 +40,6 @@ set wildmode=longest,list,full
 set wildignore+=*.retry
 set wildmenu
 
-" Change the invisible characters
-set listchars=trail:.,tab:▸\ ,eol:¬,extends:❯,precedes:❮
-
 " Searching
 set nohlsearch                              " Do not hightlight search result
 set incsearch                               " Highlight search results instantly
