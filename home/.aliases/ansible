@@ -20,9 +20,10 @@ if ! command -v ansible-playbook 2>&1 >/dev/null; then
       --user "$(id -u):$(id -g)" \
       --volume "${ansible_path}:/ansible" \
       --volume "$(pwd):/home/ansible/project" \
-      --volume "$SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent" \
+      --volume "$SSH_AUTH_SOCK:/ssh-agent" \
       --volume "${HOME}/.ssh/config:/home/ansible/.ssh/config:ro" \
       --volume "${HOME}/.ssh/known_hosts:/home/ansible/.ssh/known_hosts:ro" \
+      --env "SSH_AUTH_SOCK=/ssh-agent" \
       --workdir /home/ansible/project \
       "${ansible_image}" \
       ansible-playbook "$@"
